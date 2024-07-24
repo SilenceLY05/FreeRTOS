@@ -1,0 +1,11 @@
+Dependencies for Project 'Fire_FreeRTOS', Target 'Target 1': (DO NOT MODIFY !)
+F (..\User\main.c)(0x66988FD8)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork --split_sections -I ..\freertos\include -I ..\freertos\portable\RVDS\ARM_CM3 -I ..\User-I C:\Users\86130\Desktop\新建文件夹\Project\RTE-I F:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I F:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="518" -D_RTE_ -DARMCM3-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\Doc\readme.txt)(0x66988A96)()
+F (RTE\Device\ARMCM3\startup_ARMCM3.s)(0x50B2CC4C)(--cpu Cortex-M3 --li -g --apcs=interwork -I C:\Users\86130\Desktop\新建文件夹\Project\RTE-I F:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I F:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include--pd "__UVISION_VERSION SETA 518" --pd "_RTE_ SETA 1" --pd "ARMCM3 SETA 1"--list .\listings\startup_armcm3.lst --xref -o .\objects\startup_armcm3.o --depend .\objects\startup_armcm3.d)
+F (RTE\Device\ARMCM3\system_ARMCM3.c)(0x669890C3)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork --split_sections -I ..\freertos\include -I ..\freertos\portable\RVDS\ARM_CM3 -I ..\User-I C:\Users\86130\Desktop\新建文件夹\Project\RTE-I F:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I F:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="518" -D_RTE_ -DARMCM3-o .\objects\system_armcm3.o --omf_browse .\objects\system_armcm3.crf --depend .\objects\system_armcm3.d)
+I (F:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include\ARMCM3.h)(0x540FF94C)
+I (F:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm3.h)(0x53FC31DA)
+I (F:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (F:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
+I (F:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
+I (F:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include\system_ARMCM3.h)(0x50B2CC4C)
