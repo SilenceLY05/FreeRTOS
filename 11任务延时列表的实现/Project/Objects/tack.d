@@ -1,0 +1,11 @@
+.\objects\tack.o: ..\freertos\tack.c
+.\objects\tack.o: ..\freertos\include\FreeRTOS.h
+.\objects\tack.o: ..\freertos\include\FreeRTOSConfig.h
+.\objects\tack.o: ..\freertos\include\projdefs.h
+.\objects\tack.o: ..\freertos\include\portable.h
+.\objects\tack.o: ..\freertos\include\portmacro.h
+.\objects\tack.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\tack.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\tack.o: ..\freertos\include\list.h
+.\objects\tack.o: ..\freertos\include\FreeRTOS.h
+.\objects\tack.o: ..\freertos\include\task.h
