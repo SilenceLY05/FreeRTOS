@@ -22,80 +22,16 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 G:\FreeRTOS\FreeRTOS\STM32F429-LAN9303\Project\YH-F429.uvprojx
-Project File Date:  09/10/2024
+Project File Date:  09/11/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'F:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'USART'
 compiling bsp_spi_flash.c...
-..\User\flash\bsp_spi_flash.h(92): error:  #20: identifier "u32" is undefined
-  void SPI_FLASH_SectorErase(u32 SectorAddr);
-..\User\flash\bsp_spi_flash.h(94): error:  #20: identifier "u8" is undefined
-  void SPI_FLASH_PageWrite(u8* pBuffer, u32 WriteAddr, u32 NumByteToWrite);
-..\User\flash\bsp_spi_flash.h(94): error:  #20: identifier "u32" is undefined
-  void SPI_FLASH_PageWrite(u8* pBuffer, u32 WriteAddr, u32 NumByteToWrite);
-..\User\flash\bsp_spi_flash.h(94): error:  #20: identifier "u32" is undefined
-  void SPI_FLASH_PageWrite(u8* pBuffer, u32 WriteAddr, u32 NumByteToWrite);
-..\User\flash\bsp_spi_flash.h(95): error:  #20: identifier "u8" is undefined
-  void SPI_FLASH_BufferWrite(u8* pBuffer, u32 WriteAddr, u32 NumByteToWrite);
-..\User\flash\bsp_spi_flash.h(95): error:  #20: identifier "u32" is undefined
-  void SPI_FLASH_BufferWrite(u8* pBuffer, u32 WriteAddr, u32 NumByteToWrite);
-..\User\flash\bsp_spi_flash.h(95): error:  #20: identifier "u32" is undefined
-  void SPI_FLASH_BufferWrite(u8* pBuffer, u32 WriteAddr, u32 NumByteToWrite);
-..\User\flash\bsp_spi_flash.h(96): error:  #20: identifier "u8" is undefined
-  void SPI_FLASH_BufferRead(u8* pBuffer, u32 ReadAddr, u32 NumByteToRead);
-..\User\flash\bsp_spi_flash.h(96): error:  #20: identifier "u32" is undefined
-  void SPI_FLASH_BufferRead(u8* pBuffer, u32 ReadAddr, u32 NumByteToRead);
-..\User\flash\bsp_spi_flash.h(96): error:  #20: identifier "u32" is undefined
-  void SPI_FLASH_BufferRead(u8* pBuffer, u32 ReadAddr, u32 NumByteToRead);
-..\User\flash\bsp_spi_flash.h(97): error:  #20: identifier "u32" is undefined
-  u32 SPI_FLASH_ReadID(void);
-..\User\flash\bsp_spi_flash.h(98): error:  #20: identifier "u32" is undefined
-  u32 SPI_FLASH_ReadDeviceID(void);
-..\User\flash\bsp_spi_flash.h(99): error:  #20: identifier "u32" is undefined
-  void SPI_FLASH_StartReadSequence(u32 ReadAddr);
-..\User\flash\bsp_spi_flash.h(104): error:  #20: identifier "u8" is undefined
-  u8 SPI_FLASH_ReadByte(void);
-..\User\flash\bsp_spi_flash.h(105): error:  #20: identifier "u8" is undefined
-  u8 SPI_FLASH_SendByte(u8 byte);
-..\User\flash\bsp_spi_flash.h(105): error:  #20: identifier "u8" is undefined
-  u8 SPI_FLASH_SendByte(u8 byte);
-..\User\flash\bsp_spi_flash.h(106): error:  #20: identifier "u16" is undefined
-  u16 SPI_FLASH_SendHalfWord(u16 HalfWord);
-..\User\flash\bsp_spi_flash.h(106): error:  #20: identifier "u16" is undefined
-  u16 SPI_FLASH_SendHalfWord(u16 HalfWord);
-..\User\flash\bsp_spi_flash.c(38): warning:  #223-D: function "RCC_AHB1PeriphClockCmd" declared implicitly
-    RCC_AHB1PeriphClockCmd (FLASH_SPI_SCK_GPIO_CLK | FLASH_SPI_MISO_GPIO_CLK|FLASH_SPI_MOSI_GPIO_CLK|FLASH_CS_GPIO_CLK, ENABLE);
-..\User\flash\bsp_spi_flash.c(38): error:  #20: identifier "RCC_AHB1Periph_GPIOF" is undefined
-    RCC_AHB1PeriphClockCmd (FLASH_SPI_SCK_GPIO_CLK | FLASH_SPI_MISO_GPIO_CLK|FLASH_SPI_MOSI_GPIO_CLK|FLASH_CS_GPIO_CLK, ENABLE);
-..\User\flash\bsp_spi_flash.c(41): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
-    FLASH_SPI_CLK_INIT(FLASH_SPI_CLK, ENABLE);
-..\User\flash\bsp_spi_flash.c(41): error:  #20: identifier "RCC_APB2Periph_SPI5" is undefined
-    FLASH_SPI_CLK_INIT(FLASH_SPI_CLK, ENABLE);
-..\User\flash\bsp_spi_flash.c(44): warning:  #223-D: function "GPIO_PinAFConfig" declared implicitly
-    GPIO_PinAFConfig(FLASH_SPI_SCK_GPIO_PORT,FLASH_SPI_SCK_PINSOURCE,FLASH_SPI_SCK_AF); 
-..\User\flash\bsp_spi_flash.c(44): error:  #20: identifier "GPIO_PinSource7" is undefined
-    GPIO_PinAFConfig(FLASH_SPI_SCK_GPIO_PORT,FLASH_SPI_SCK_PINSOURCE,FLASH_SPI_SCK_AF); 
-..\User\flash\bsp_spi_flash.c(44): error:  #20: identifier "GPIO_AF_SPI5" is undefined
-    GPIO_PinAFConfig(FLASH_SPI_SCK_GPIO_PORT,FLASH_SPI_SCK_PINSOURCE,FLASH_SPI_SCK_AF); 
-..\User\flash\bsp_spi_flash.c(45): error:  #20: identifier "GPIO_PinSource8" is undefined
-  	GPIO_PinAFConfig(FLASH_SPI_MISO_GPIO_PORT,FLASH_SPI_MISO_PINSOURCE,FLASH_SPI_MISO_AF); 
-..\User\flash\bsp_spi_flash.c(46): error:  #20: identifier "GPIO_PinSource9" is undefined
-  	GPIO_PinAFConfig(FLASH_SPI_MOSI_GPIO_PORT,FLASH_SPI_MOSI_PINSOURCE,FLASH_SPI_MOSI_AF); 
-..\User\flash\bsp_spi_flash.c(49): error:  #136: struct "<unnamed>"  has no field "GPIO_Pin"
-    GPIO_InitStructure.GPIO_Pin = FLASH_SPI_SCK_PIN;
-..\User\flash\bsp_spi_flash.c(49): error:  #20: identifier "GPIO_Pin_7" is undefined
-    GPIO_InitStructure.GPIO_Pin = FLASH_SPI_SCK_PIN;
-..\User\flash\bsp_spi_flash.c(50): error:  #136: struct "<unnamed>"  has no field "GPIO_Speed"
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-..\User\flash\bsp_spi_flash.c(50): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-..\User\flash\bsp_spi_flash.c(51): error:  #136: struct "<unnamed>"  has no field "GPIO_Mode"
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
-..\User\flash\bsp_spi_flash.c(51): error:  #20: identifier "GPIO_Mode_AF" is undefined
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
-..\User\flash\bsp_spi_flash.c: 3 warnings, 30 errors
-"..\Output\YH-F429.axf" - 30 Error(s), 3 Warning(s).
+linking...
+Program Size: Code=74564 RO-data=1372 RW-data=392 ZI-data=153616  
+FromELF: creating hex file...
+"..\Output\YH-F429.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -108,8 +44,7 @@ Package Vendor: Keil
   F:/Keil_v5/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
 
 <h2>Collection of Component Files used:</h2>
-Target not created.
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>
