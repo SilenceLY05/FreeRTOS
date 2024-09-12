@@ -78,6 +78,7 @@
 "..\output\tcpecho.o"
 "..\output\bsp_sdram.o"
 "..\output\bsp_spi_flash.o"
+"..\output\bsp_key.o"
 "..\output\api_lib.o"
 "..\output\api_msg.o"
 "..\output\err.o"
