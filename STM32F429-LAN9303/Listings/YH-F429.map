@@ -1560,6 +1560,8 @@ Section Cross References
     bsp_spi_flash.o(i.SPI_TIMEOUT_UserCallback) refers to printf5.o(i.__0printf$5) for __2printf
     bsp_key.o(i.Key_GPIO_Config) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
     bsp_key.o(i.Key_Scan) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
+    bsp_beep.o(i.BEEP_GPIO_Config) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
+    bsp_beep.o(i.BEEP_GPIO_Config) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     api_lib.o(i.netconn_accept) refers to printf5.o(i.__0printf$5) for __2printf
     api_lib.o(i.netconn_accept) refers to api_lib.o(i.netconn_err) for netconn_err
     api_lib.o(i.netconn_accept) refers to sys_arch.o(i.sys_mbox_valid) for sys_mbox_valid
@@ -5160,6 +5162,10 @@ Removing Unused input sections from the image.
     Removing bsp_key.o(.rrx_text), (6 bytes).
     Removing bsp_key.o(i.Key_GPIO_Config), (116 bytes).
     Removing bsp_key.o(i.Key_Scan), (40 bytes).
+    Removing bsp_beep.o(.rev16_text), (4 bytes).
+    Removing bsp_beep.o(.revsh_text), (4 bytes).
+    Removing bsp_beep.o(.rrx_text), (6 bytes).
+    Removing bsp_beep.o(i.BEEP_GPIO_Config), (84 bytes).
     Removing api_lib.o(.rev16_text), (4 bytes).
     Removing api_lib.o(.revsh_text), (4 bytes).
     Removing api_lib.o(.rrx_text), (6 bytes).
@@ -5480,7 +5486,7 @@ Removing Unused input sections from the image.
     Removing cdrcmple.o(.text), (48 bytes).
     Removing depilogue.o(.text), (186 bytes).
 
-1859 unused section(s) (total 161986 bytes) removed from the image.
+1863 unused section(s) (total 162084 bytes) removed from the image.
 
 ==============================================================================
 
@@ -5491,61 +5497,61 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     ../clib/../cmprslib/zerorunl2.c          0x00000000   Number         0  __dczerorl2.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isgraph_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  iscntrl_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isdigit_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  ctype_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isupper_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isspace_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isblank_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isalpha_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isdigit_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isalnum_o.o ABSOLUTE
-    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  ispunct_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isprint_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  islower_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isalnum_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isgraph_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  ispunct_o.o ABSOLUTE
     ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isxdigit_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isalpha_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  isblank_o.o ABSOLUTE
+    ../clib/microlib/ctype/ctype.c           0x00000000   Number         0  iscntrl_o.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
     ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
     ../clib/microlib/string/memcmp.c         0x00000000   Number         0  memcmp.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmoveb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmoveb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmovea.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
@@ -5553,9 +5559,9 @@ Image Symbol Table
     ../clib/microlib/string/strncmp.c        0x00000000   Number         0  strncmp.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../clib/scanf.c                          0x00000000   Number         0  strtol.o ABSOLUTE
+    ../clib/scanf.c                          0x00000000   Number         0  _chval.o ABSOLUTE
     ../clib/scanf.c                          0x00000000   Number         0  _strtoul.o ABSOLUTE
     ../clib/scanf.c                          0x00000000   Number         0  atoi.o ABSOLUTE
-    ../clib/scanf.c                          0x00000000   Number         0  _chval.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
@@ -5678,6 +5684,7 @@ Image Symbol Table
     ..\LwIP\netif\ethernet.c                 0x00000000   Number         0  ethernet.o ABSOLUTE
     ..\User\arch\ethernetif.c                0x00000000   Number         0  ethernetif.o ABSOLUTE
     ..\User\arch\sys_arch.c                  0x00000000   Number         0  sys_arch.o ABSOLUTE
+    ..\User\beep\bsp_beep.c                  0x00000000   Number         0  bsp_beep.o ABSOLUTE
     ..\User\board.c                          0x00000000   Number         0  board.o ABSOLUTE
     ..\User\client.c                         0x00000000   Number         0  client.o ABSOLUTE
     ..\User\eth\bsp_eth.c                    0x00000000   Number         0  bsp_eth.o ABSOLUTE
@@ -5805,6 +5812,7 @@ Image Symbol Table
     ..\\LwIP\\netif\\ethernet.c              0x00000000   Number         0  ethernet.o ABSOLUTE
     ..\\User\\arch\\ethernetif.c             0x00000000   Number         0  ethernetif.o ABSOLUTE
     ..\\User\\arch\\sys_arch.c               0x00000000   Number         0  sys_arch.o ABSOLUTE
+    ..\\User\\beep\\bsp_beep.c               0x00000000   Number         0  bsp_beep.o ABSOLUTE
     ..\\User\\board.c                        0x00000000   Number         0  board.o ABSOLUTE
     ..\\User\\client.c                       0x00000000   Number         0  client.o ABSOLUTE
     ..\\User\\eth\\bsp_eth.c                 0x00000000   Number         0  bsp_eth.o ABSOLUTE
@@ -7156,34 +7164,34 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000001ac   Data   RO            3    RESET               startup_stm32f429xx.o
-    0x080001ac   0x080001ac   0x00000000   Code   RO        14281  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001ac   0x080001ac   0x00000004   Code   RO        14621    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001b0   0x080001b0   0x00000004   Code   RO        14624    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080001b4   0x080001b4   0x00000000   Code   RO        14626    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080001b4   0x080001b4   0x00000000   Code   RO        14628    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080001b4   0x080001b4   0x00000008   Code   RO        14629    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080001bc   0x080001bc   0x00000004   Code   RO        14636    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
-    0x080001c0   0x080001c0   0x00000000   Code   RO        14631    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
-    0x080001c0   0x080001c0   0x00000000   Code   RO        14633    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
-    0x080001c0   0x080001c0   0x00000004   Code   RO        14622    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x080001c4   0x080001c4   0x000000b6   Code   RO        14195    .emb_text           port.o
+    0x080001ac   0x080001ac   0x00000000   Code   RO        14308  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001ac   0x080001ac   0x00000004   Code   RO        14648    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001b0   0x080001b0   0x00000004   Code   RO        14651    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080001b4   0x080001b4   0x00000000   Code   RO        14653    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080001b4   0x080001b4   0x00000000   Code   RO        14655    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080001b4   0x080001b4   0x00000008   Code   RO        14656    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080001bc   0x080001bc   0x00000004   Code   RO        14663    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
+    0x080001c0   0x080001c0   0x00000000   Code   RO        14658    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
+    0x080001c0   0x080001c0   0x00000000   Code   RO        14660    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
+    0x080001c0   0x080001c0   0x00000004   Code   RO        14649    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001c4   0x080001c4   0x000000b6   Code   RO        14222    .emb_text           port.o
     0x0800027a   0x0800027a   0x00000002   PAD
     0x0800027c   0x0800027c   0x00000024   Code   RO            4    .text               startup_stm32f429xx.o
-    0x080002a0   0x080002a0   0x00000062   Code   RO        14284    .text               mc_w.l(uldiv.o)
+    0x080002a0   0x080002a0   0x00000062   Code   RO        14311    .text               mc_w.l(uldiv.o)
     0x08000302   0x08000302   0x00000002   PAD
-    0x08000304   0x08000304   0x00000008   Code   RO        14286    .text               mc_w.l(ctype_o.o)
-    0x0800030c   0x0800030c   0x00000040   Code   RO        14316    .text               mc_w.l(memmovea.o)
-    0x0800034c   0x0800034c   0x00000024   Code   RO        14318    .text               mc_w.l(memseta.o)
-    0x08000370   0x08000370   0x0000001a   Code   RO        14322    .text               mc_w.l(memcmp.o)
-    0x0800038a   0x0800038a   0x0000001a   Code   RO        14619    .text               mc_w.l(atoi.o)
-    0x080003a4   0x080003a4   0x0000001e   Code   RO        14640    .text               mc_w.l(llshl.o)
-    0x080003c2   0x080003c2   0x00000020   Code   RO        14642    .text               mc_w.l(llushr.o)
-    0x080003e2   0x080003e2   0x00000070   Code   RO        14653    .text               mc_w.l(strtol.o)
+    0x08000304   0x08000304   0x00000008   Code   RO        14313    .text               mc_w.l(ctype_o.o)
+    0x0800030c   0x0800030c   0x00000040   Code   RO        14343    .text               mc_w.l(memmovea.o)
+    0x0800034c   0x0800034c   0x00000024   Code   RO        14345    .text               mc_w.l(memseta.o)
+    0x08000370   0x08000370   0x0000001a   Code   RO        14349    .text               mc_w.l(memcmp.o)
+    0x0800038a   0x0800038a   0x0000001a   Code   RO        14646    .text               mc_w.l(atoi.o)
+    0x080003a4   0x080003a4   0x0000001e   Code   RO        14667    .text               mc_w.l(llshl.o)
+    0x080003c2   0x080003c2   0x00000020   Code   RO        14669    .text               mc_w.l(llushr.o)
+    0x080003e2   0x080003e2   0x00000070   Code   RO        14680    .text               mc_w.l(strtol.o)
     0x08000452   0x08000452   0x00000002   PAD
-    0x08000454   0x08000454   0x00000024   Code   RO        14666    .text               mc_w.l(init.o)
-    0x08000478   0x08000478   0x0000009e   Code   RO        14670    .text               mc_w.l(_strtoul.o)
-    0x08000516   0x08000516   0x0000001c   Code   RO        14674    .text               mc_w.l(_chval.o)
-    0x08000532   0x08000532   0x00000056   Code   RO        14684    .text               mc_w.l(__dczerorl2.o)
+    0x08000454   0x08000454   0x00000024   Code   RO        14693    .text               mc_w.l(init.o)
+    0x08000478   0x08000478   0x0000009e   Code   RO        14697    .text               mc_w.l(_strtoul.o)
+    0x08000516   0x08000516   0x0000001c   Code   RO        14701    .text               mc_w.l(_chval.o)
+    0x08000532   0x08000532   0x00000056   Code   RO        14711    .text               mc_w.l(__dczerorl2.o)
     0x08000588   0x08000588   0x000000cc   Code   RO         9075    i.AppTaskCreate     main.o
     0x08000654   0x08000654   0x00000044   Code   RO         9319    i.BSP_Init          board.o
     0x08000698   0x08000698   0x0000010c   Code   RO         9353    i.Bsp_Eth_Init      bsp_eth.o
@@ -7254,432 +7262,432 @@ Memory Map of the image
     0x080025ec   0x080025ec   0x00000034   Code   RO         9175    i.SysTick_Handler   stm32f4xx_it.o
     0x08002620   0x08002620   0x000000a8   Code   RO         9321    i.SystemClock_Config  board.o
     0x080026c8   0x080026c8   0x00000064   Code   RO           14    i.SystemInit        system_stm32f4xx.o
-    0x0800272c   0x0800272c   0x000000b8   Code   RO        13234    i.TCPIP_Init        sys_arch.o
+    0x0800272c   0x0800272c   0x000000b8   Code   RO        13261    i.TCPIP_Init        sys_arch.o
     0x080027e4   0x080027e4   0x0000001c   Code   RO         9076    i.Test1_Task        main.o
     0x08002800   0x08002800   0x0000001c   Code   RO         9077    i.Test2_Task        main.o
     0x0800281c   0x0800281c   0x00000368   Code   RO         7738    i.UART_SetConfig    stm32f4xx_hal_uart.o
     0x08002b84   0x08002b84   0x0000006c   Code   RO         7740    i.UART_WaitOnFlagUntilTimeout  stm32f4xx_hal_uart.o
     0x08002bf0   0x08002bf0   0x00000004   Code   RO         9176    i.UsageFault_Handler  stm32f4xx_it.o
-    0x08002bf4   0x08002bf4   0x00000020   Code   RO        14463    i.__0printf$5       mc_w.l(printf5.o)
-    0x08002c14   0x08002c14   0x00000008   Code   RO        14646    i.__aeabi_errno_addr  mc_w.l(errno.o)
-    0x08002c1c   0x08002c1c   0x0000000e   Code   RO        14678    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08002c2a   0x08002c2a   0x00000002   Code   RO        14679    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08002c2c   0x08002c2c   0x0000000e   Code   RO        14680    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08002bf4   0x08002bf4   0x00000020   Code   RO        14490    i.__0printf$5       mc_w.l(printf5.o)
+    0x08002c14   0x08002c14   0x00000008   Code   RO        14673    i.__aeabi_errno_addr  mc_w.l(errno.o)
+    0x08002c1c   0x08002c1c   0x0000000e   Code   RO        14705    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08002c2a   0x08002c2a   0x00000002   Code   RO        14706    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08002c2c   0x08002c2c   0x0000000e   Code   RO        14707    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x08002c3a   0x08002c3a   0x00000002   PAD
-    0x08002c3c   0x08002c3c   0x000002c0   Code   RO        14470    i._printf_core      mc_w.l(printf5.o)
-    0x08002efc   0x08002efc   0x00000138   Code   RO        10102    i.accept_function   api_msg.o
-    0x08003034   0x08003034   0x000000bc   Code   RO        10500    i.alloc_socket      sockets.o
-    0x080030f0   0x080030f0   0x00000058   Code   RO        11802    i.do_memp_free_pool  memp.o
-    0x08003148   0x08003148   0x00000064   Code   RO        11803    i.do_memp_malloc_pool  memp.o
-    0x080031ac   0x080031ac   0x00000184   Code   RO        10103    i.err_tcp           api_msg.o
-    0x08003330   0x08003330   0x00000020   Code   RO        10304    i.err_to_errno      err.o
-    0x08003350   0x08003350   0x00000038   Code   RO        11024    i.etharp_cleanup_netif  etharp.o
-    0x08003388   0x08003388   0x00000278   Code   RO        11026    i.etharp_find_entry  etharp.o
-    0x08003600   0x08003600   0x00000040   Code   RO        11027    i.etharp_free_entry  etharp.o
-    0x08003640   0x08003640   0x000000d0   Code   RO        11029    i.etharp_input      etharp.o
-    0x08003710   0x08003710   0x000001a8   Code   RO        11030    i.etharp_output     etharp.o
-    0x080038b8   0x080038b8   0x00000100   Code   RO        11031    i.etharp_output_to_arp_index  etharp.o
-    0x080039b8   0x080039b8   0x00000224   Code   RO        11032    i.etharp_query      etharp.o
-    0x08003bdc   0x08003bdc   0x00000110   Code   RO        11033    i.etharp_raw        etharp.o
-    0x08003cec   0x08003cec   0x00000018   Code   RO        11034    i.etharp_request    etharp.o
-    0x08003d04   0x08003d04   0x0000002c   Code   RO        11035    i.etharp_request_dst  etharp.o
-    0x08003d30   0x08003d30   0x000000dc   Code   RO        11036    i.etharp_tmr        etharp.o
-    0x08003e0c   0x08003e0c   0x000000f4   Code   RO        11037    i.etharp_update_arp_entry  etharp.o
-    0x08003f00   0x08003f00   0x000000c4   Code   RO        13135    i.ethernet_input    ethernet.o
-    0x08003fc4   0x08003fc4   0x0000009c   Code   RO        13136    i.ethernet_output   ethernet.o
-    0x08004060   0x08004060   0x000000a0   Code   RO        13172    i.ethernetif_init   ethernetif.o
-    0x08004100   0x08004100   0x0000004c   Code   RO        13173    i.ethernetif_input  ethernetif.o
-    0x0800414c   0x0800414c   0x00000110   Code   RO        10501    i.event_callback    sockets.o
+    0x08002c3c   0x08002c3c   0x000002c0   Code   RO        14497    i._printf_core      mc_w.l(printf5.o)
+    0x08002efc   0x08002efc   0x00000138   Code   RO        10129    i.accept_function   api_msg.o
+    0x08003034   0x08003034   0x000000bc   Code   RO        10527    i.alloc_socket      sockets.o
+    0x080030f0   0x080030f0   0x00000058   Code   RO        11829    i.do_memp_free_pool  memp.o
+    0x08003148   0x08003148   0x00000064   Code   RO        11830    i.do_memp_malloc_pool  memp.o
+    0x080031ac   0x080031ac   0x00000184   Code   RO        10130    i.err_tcp           api_msg.o
+    0x08003330   0x08003330   0x00000020   Code   RO        10331    i.err_to_errno      err.o
+    0x08003350   0x08003350   0x00000038   Code   RO        11051    i.etharp_cleanup_netif  etharp.o
+    0x08003388   0x08003388   0x00000278   Code   RO        11053    i.etharp_find_entry  etharp.o
+    0x08003600   0x08003600   0x00000040   Code   RO        11054    i.etharp_free_entry  etharp.o
+    0x08003640   0x08003640   0x000000d0   Code   RO        11056    i.etharp_input      etharp.o
+    0x08003710   0x08003710   0x000001a8   Code   RO        11057    i.etharp_output     etharp.o
+    0x080038b8   0x080038b8   0x00000100   Code   RO        11058    i.etharp_output_to_arp_index  etharp.o
+    0x080039b8   0x080039b8   0x00000224   Code   RO        11059    i.etharp_query      etharp.o
+    0x08003bdc   0x08003bdc   0x00000110   Code   RO        11060    i.etharp_raw        etharp.o
+    0x08003cec   0x08003cec   0x00000018   Code   RO        11061    i.etharp_request    etharp.o
+    0x08003d04   0x08003d04   0x0000002c   Code   RO        11062    i.etharp_request_dst  etharp.o
+    0x08003d30   0x08003d30   0x000000dc   Code   RO        11063    i.etharp_tmr        etharp.o
+    0x08003e0c   0x08003e0c   0x000000f4   Code   RO        11064    i.etharp_update_arp_entry  etharp.o
+    0x08003f00   0x08003f00   0x000000c4   Code   RO        13162    i.ethernet_input    ethernet.o
+    0x08003fc4   0x08003fc4   0x0000009c   Code   RO        13163    i.ethernet_output   ethernet.o
+    0x08004060   0x08004060   0x000000a0   Code   RO        13199    i.ethernetif_init   ethernetif.o
+    0x08004100   0x08004100   0x0000004c   Code   RO        13200    i.ethernetif_input  ethernetif.o
+    0x0800414c   0x0800414c   0x00000110   Code   RO        10528    i.event_callback    sockets.o
     0x0800425c   0x0800425c   0x0000001c   Code   RO         9244    i.fputc             bsp_debug_usart.o
-    0x08004278   0x08004278   0x00000050   Code   RO        14591    i.free              mc_w.l(malloc.o)
-    0x080042c8   0x080042c8   0x00000032   Code   RO        10502    i.free_socket       sockets.o
-    0x080042fa   0x080042fa   0x00000026   Code   RO        10503    i.free_socket_free_elements  sockets.o
-    0x08004320   0x08004320   0x00000018   Code   RO        10504    i.free_socket_locked  sockets.o
-    0x08004338   0x08004338   0x00000024   Code   RO        10505    i.get_socket        sockets.o
-    0x0800435c   0x0800435c   0x00000012   Code   RO        11143    i.icmp_dest_unreach  icmp.o
+    0x08004278   0x08004278   0x00000050   Code   RO        14618    i.free              mc_w.l(malloc.o)
+    0x080042c8   0x080042c8   0x00000032   Code   RO        10529    i.free_socket       sockets.o
+    0x080042fa   0x080042fa   0x00000026   Code   RO        10530    i.free_socket_free_elements  sockets.o
+    0x08004320   0x08004320   0x00000018   Code   RO        10531    i.free_socket_locked  sockets.o
+    0x08004338   0x08004338   0x00000024   Code   RO        10532    i.get_socket        sockets.o
+    0x0800435c   0x0800435c   0x00000012   Code   RO        11170    i.icmp_dest_unreach  icmp.o
     0x0800436e   0x0800436e   0x00000002   PAD
-    0x08004370   0x08004370   0x00000210   Code   RO        11144    i.icmp_input        icmp.o
-    0x08004580   0x08004580   0x000000b4   Code   RO        11145    i.icmp_send_response  icmp.o
-    0x08004634   0x08004634   0x00000012   Code   RO        11146    i.icmp_time_exceeded  icmp.o
-    0x08004646   0x08004646   0x00000056   Code   RO        11564    i.inet_chksum_pbuf  inet_chksum.o
-    0x0800469c   0x0800469c   0x0000004e   Code   RO        11284    i.ip4_addr_isbroadcast_u32  ip4_addr.o
+    0x08004370   0x08004370   0x00000210   Code   RO        11171    i.icmp_input        icmp.o
+    0x08004580   0x08004580   0x000000b4   Code   RO        11172    i.icmp_send_response  icmp.o
+    0x08004634   0x08004634   0x00000012   Code   RO        11173    i.icmp_time_exceeded  icmp.o
+    0x08004646   0x08004646   0x00000056   Code   RO        11591    i.inet_chksum_pbuf  inet_chksum.o
+    0x0800469c   0x0800469c   0x0000004e   Code   RO        11311    i.ip4_addr_isbroadcast_u32  ip4_addr.o
     0x080046ea   0x080046ea   0x00000002   PAD
-    0x080046ec   0x080046ec   0x00000250   Code   RO        11352    i.ip4_frag          ip4_frag.o
-    0x0800493c   0x0800493c   0x0000019c   Code   RO        11208    i.ip4_input         ip4.o
-    0x08004ad8   0x08004ad8   0x00000034   Code   RO        11209    i.ip4_input_accept  ip4.o
-    0x08004b0c   0x08004b0c   0x00000036   Code   RO        11211    i.ip4_output_if     ip4.o
+    0x080046ec   0x080046ec   0x00000250   Code   RO        11379    i.ip4_frag          ip4_frag.o
+    0x0800493c   0x0800493c   0x0000019c   Code   RO        11235    i.ip4_input         ip4.o
+    0x08004ad8   0x08004ad8   0x00000034   Code   RO        11236    i.ip4_input_accept  ip4.o
+    0x08004b0c   0x08004b0c   0x00000036   Code   RO        11238    i.ip4_output_if     ip4.o
     0x08004b42   0x08004b42   0x00000002   PAD
-    0x08004b44   0x08004b44   0x00000130   Code   RO        11212    i.ip4_output_if_src  ip4.o
-    0x08004c74   0x08004c74   0x00000280   Code   RO        11353    i.ip4_reass         ip4_frag.o
-    0x08004ef4   0x08004ef4   0x00000094   Code   RO        11213    i.ip4_route         ip4.o
-    0x08004f88   0x08004f88   0x00000014   Code   RO        11287    i.ip4addr_ntoa      ip4_addr.o
-    0x08004f9c   0x08004f9c   0x000000a8   Code   RO        11288    i.ip4addr_ntoa_r    ip4_addr.o
-    0x08005044   0x08005044   0x0000000a   Code   RO        11354    i.ip_frag_alloc_pbuf_custom_ref  ip4_frag.o
+    0x08004b44   0x08004b44   0x00000130   Code   RO        11239    i.ip4_output_if_src  ip4.o
+    0x08004c74   0x08004c74   0x00000280   Code   RO        11380    i.ip4_reass         ip4_frag.o
+    0x08004ef4   0x08004ef4   0x00000094   Code   RO        11240    i.ip4_route         ip4.o
+    0x08004f88   0x08004f88   0x00000014   Code   RO        11314    i.ip4addr_ntoa      ip4_addr.o
+    0x08004f9c   0x08004f9c   0x000000a8   Code   RO        11315    i.ip4addr_ntoa_r    ip4_addr.o
+    0x08005044   0x08005044   0x0000000a   Code   RO        11381    i.ip_frag_alloc_pbuf_custom_ref  ip4_frag.o
     0x0800504e   0x0800504e   0x00000002   PAD
-    0x08005050   0x08005050   0x0000002c   Code   RO        11355    i.ip_frag_free_pbuf_custom_ref  ip4_frag.o
-    0x0800507c   0x0800507c   0x00000274   Code   RO        11356    i.ip_reass_chain_frag_into_datagram_and_validate  ip4_frag.o
-    0x080052f0   0x080052f0   0x00000054   Code   RO        11357    i.ip_reass_dequeue_datagram  ip4_frag.o
-    0x08005344   0x08005344   0x00000054   Code   RO        11358    i.ip_reass_enqueue_new_datagram  ip4_frag.o
-    0x08005398   0x08005398   0x0000015c   Code   RO        11359    i.ip_reass_free_complete_datagram  ip4_frag.o
-    0x080054f4   0x080054f4   0x00000088   Code   RO        11360    i.ip_reass_remove_oldest_datagram  ip4_frag.o
-    0x0800557c   0x0800557c   0x00000034   Code   RO        11361    i.ip_reass_tmr      ip4_frag.o
-    0x080055b0   0x080055b0   0x00000054   Code   RO        11362    i.ipfrag_free_pbuf_custom  ip4_frag.o
-    0x08005604   0x08005604   0x0000018c   Code   RO        13174    i.low_level_init    ethernetif.o
-    0x08005790   0x08005790   0x00000174   Code   RO        13175    i.low_level_input   ethernetif.o
-    0x08005904   0x08005904   0x00000100   Code   RO        13176    i.low_level_output  ethernetif.o
-    0x08005a04   0x08005a04   0x000001f4   Code   RO        10506    i.lwip_accept       sockets.o
-    0x08005bf8   0x08005bf8   0x000000cc   Code   RO        10507    i.lwip_bind         sockets.o
-    0x08005cc4   0x08005cc4   0x0000009c   Code   RO        10508    i.lwip_close        sockets.o
-    0x08005d60   0x08005d60   0x00000050   Code   RO        12920    i.lwip_cyclic_timer  timeouts.o
-    0x08005db0   0x08005db0   0x0000001a   Code   RO        11491    i.lwip_htonl        def.o
-    0x08005dca   0x08005dca   0x0000000c   Code   RO        11492    i.lwip_htons        def.o
+    0x08005050   0x08005050   0x0000002c   Code   RO        11382    i.ip_frag_free_pbuf_custom_ref  ip4_frag.o
+    0x0800507c   0x0800507c   0x00000274   Code   RO        11383    i.ip_reass_chain_frag_into_datagram_and_validate  ip4_frag.o
+    0x080052f0   0x080052f0   0x00000054   Code   RO        11384    i.ip_reass_dequeue_datagram  ip4_frag.o
+    0x08005344   0x08005344   0x00000054   Code   RO        11385    i.ip_reass_enqueue_new_datagram  ip4_frag.o
+    0x08005398   0x08005398   0x0000015c   Code   RO        11386    i.ip_reass_free_complete_datagram  ip4_frag.o
+    0x080054f4   0x080054f4   0x00000088   Code   RO        11387    i.ip_reass_remove_oldest_datagram  ip4_frag.o
+    0x0800557c   0x0800557c   0x00000034   Code   RO        11388    i.ip_reass_tmr      ip4_frag.o
+    0x080055b0   0x080055b0   0x00000054   Code   RO        11389    i.ipfrag_free_pbuf_custom  ip4_frag.o
+    0x08005604   0x08005604   0x0000018c   Code   RO        13201    i.low_level_init    ethernetif.o
+    0x08005790   0x08005790   0x00000174   Code   RO        13202    i.low_level_input   ethernetif.o
+    0x08005904   0x08005904   0x00000100   Code   RO        13203    i.low_level_output  ethernetif.o
+    0x08005a04   0x08005a04   0x000001f4   Code   RO        10533    i.lwip_accept       sockets.o
+    0x08005bf8   0x08005bf8   0x000000cc   Code   RO        10534    i.lwip_bind         sockets.o
+    0x08005cc4   0x08005cc4   0x0000009c   Code   RO        10535    i.lwip_close        sockets.o
+    0x08005d60   0x08005d60   0x00000050   Code   RO        12947    i.lwip_cyclic_timer  timeouts.o
+    0x08005db0   0x08005db0   0x0000001a   Code   RO        11518    i.lwip_htonl        def.o
+    0x08005dca   0x08005dca   0x0000000c   Code   RO        11519    i.lwip_htons        def.o
     0x08005dd6   0x08005dd6   0x00000002   PAD
-    0x08005dd8   0x08005dd8   0x00000040   Code   RO        11636    i.lwip_init         init.o
-    0x08005e18   0x08005e18   0x00000090   Code   RO        10520    i.lwip_listen       sockets.o
-    0x08005ea8   0x08005ea8   0x0000004c   Code   RO        10104    i.lwip_netconn_do_bind  api_msg.o
-    0x08005ef4   0x08005ef4   0x000000e8   Code   RO        10106    i.lwip_netconn_do_close  api_msg.o
-    0x08005fdc   0x08005fdc   0x000002c4   Code   RO        10107    i.lwip_netconn_do_close_internal  api_msg.o
-    0x080062a0   0x080062a0   0x00000198   Code   RO        10110    i.lwip_netconn_do_delconn  api_msg.o
-    0x08006438   0x08006438   0x000000d0   Code   RO        10112    i.lwip_netconn_do_getaddr  api_msg.o
-    0x08006508   0x08006508   0x000000e0   Code   RO        10113    i.lwip_netconn_do_listen  api_msg.o
-    0x080065e8   0x080065e8   0x00000018   Code   RO        10114    i.lwip_netconn_do_newconn  api_msg.o
-    0x08006600   0x08006600   0x00000048   Code   RO        10115    i.lwip_netconn_do_recv  api_msg.o
-    0x08006648   0x08006648   0x00000064   Code   RO        10116    i.lwip_netconn_do_send  api_msg.o
-    0x080066ac   0x080066ac   0x000000fc   Code   RO        10117    i.lwip_netconn_do_write  api_msg.o
-    0x080067a8   0x080067a8   0x00000388   Code   RO        10118    i.lwip_netconn_do_writemore  api_msg.o
-    0x08006b30   0x08006b30   0x00000054   Code   RO        10119    i.lwip_netconn_err_to_msg  api_msg.o
-    0x08006b84   0x08006b84   0x0000005c   Code   RO        10120    i.lwip_netconn_is_err_msg  api_msg.o
-    0x08006be0   0x08006be0   0x00000048   Code   RO        10522    i.lwip_poll_should_wake  sockets.o
-    0x08006c28   0x08006c28   0x00000022   Code   RO        10526    i.lwip_recv         sockets.o
+    0x08005dd8   0x08005dd8   0x00000040   Code   RO        11663    i.lwip_init         init.o
+    0x08005e18   0x08005e18   0x00000090   Code   RO        10547    i.lwip_listen       sockets.o
+    0x08005ea8   0x08005ea8   0x0000004c   Code   RO        10131    i.lwip_netconn_do_bind  api_msg.o
+    0x08005ef4   0x08005ef4   0x000000e8   Code   RO        10133    i.lwip_netconn_do_close  api_msg.o
+    0x08005fdc   0x08005fdc   0x000002c4   Code   RO        10134    i.lwip_netconn_do_close_internal  api_msg.o
+    0x080062a0   0x080062a0   0x00000198   Code   RO        10137    i.lwip_netconn_do_delconn  api_msg.o
+    0x08006438   0x08006438   0x000000d0   Code   RO        10139    i.lwip_netconn_do_getaddr  api_msg.o
+    0x08006508   0x08006508   0x000000e0   Code   RO        10140    i.lwip_netconn_do_listen  api_msg.o
+    0x080065e8   0x080065e8   0x00000018   Code   RO        10141    i.lwip_netconn_do_newconn  api_msg.o
+    0x08006600   0x08006600   0x00000048   Code   RO        10142    i.lwip_netconn_do_recv  api_msg.o
+    0x08006648   0x08006648   0x00000064   Code   RO        10143    i.lwip_netconn_do_send  api_msg.o
+    0x080066ac   0x080066ac   0x000000fc   Code   RO        10144    i.lwip_netconn_do_write  api_msg.o
+    0x080067a8   0x080067a8   0x00000388   Code   RO        10145    i.lwip_netconn_do_writemore  api_msg.o
+    0x08006b30   0x08006b30   0x00000054   Code   RO        10146    i.lwip_netconn_err_to_msg  api_msg.o
+    0x08006b84   0x08006b84   0x0000005c   Code   RO        10147    i.lwip_netconn_is_err_msg  api_msg.o
+    0x08006be0   0x08006be0   0x00000048   Code   RO        10549    i.lwip_poll_should_wake  sockets.o
+    0x08006c28   0x08006c28   0x00000022   Code   RO        10553    i.lwip_recv         sockets.o
     0x08006c4a   0x08006c4a   0x00000002   PAD
-    0x08006c4c   0x08006c4c   0x000001f4   Code   RO        10527    i.lwip_recv_tcp     sockets.o
-    0x08006e40   0x08006e40   0x00000044   Code   RO        10528    i.lwip_recv_tcp_from  sockets.o
-    0x08006e84   0x08006e84   0x00000108   Code   RO        10529    i.lwip_recvfrom     sockets.o
-    0x08006f8c   0x08006f8c   0x00000154   Code   RO        10530    i.lwip_recvfrom_udp_raw  sockets.o
-    0x080070e0   0x080070e0   0x000000a0   Code   RO        10534    i.lwip_send         sockets.o
-    0x08007180   0x08007180   0x0000013c   Code   RO        10536    i.lwip_sendto       sockets.o
-    0x080072bc   0x080072bc   0x00000080   Code   RO        10537    i.lwip_setsockopt   sockets.o
-    0x0800733c   0x0800733c   0x000002d4   Code   RO        10538    i.lwip_setsockopt_impl  sockets.o
-    0x08007610   0x08007610   0x000000cc   Code   RO        10540    i.lwip_sock_make_addr  sockets.o
-    0x080076dc   0x080076dc   0x000000a8   Code   RO        10541    i.lwip_socket       sockets.o
-    0x08007784   0x08007784   0x00000044   Code   RO        10545    i.lwip_sockopt_to_ipopt  sockets.o
-    0x080077c8   0x080077c8   0x0000005e   Code   RO        11571    i.lwip_standard_chksum  inet_chksum.o
-    0x08007826   0x08007826   0x00000016   Code   RO        10547    i.lwip_write        sockets.o
+    0x08006c4c   0x08006c4c   0x000001f4   Code   RO        10554    i.lwip_recv_tcp     sockets.o
+    0x08006e40   0x08006e40   0x00000044   Code   RO        10555    i.lwip_recv_tcp_from  sockets.o
+    0x08006e84   0x08006e84   0x00000108   Code   RO        10556    i.lwip_recvfrom     sockets.o
+    0x08006f8c   0x08006f8c   0x00000154   Code   RO        10557    i.lwip_recvfrom_udp_raw  sockets.o
+    0x080070e0   0x080070e0   0x000000a0   Code   RO        10561    i.lwip_send         sockets.o
+    0x08007180   0x08007180   0x0000013c   Code   RO        10563    i.lwip_sendto       sockets.o
+    0x080072bc   0x080072bc   0x00000080   Code   RO        10564    i.lwip_setsockopt   sockets.o
+    0x0800733c   0x0800733c   0x000002d4   Code   RO        10565    i.lwip_setsockopt_impl  sockets.o
+    0x08007610   0x08007610   0x000000cc   Code   RO        10567    i.lwip_sock_make_addr  sockets.o
+    0x080076dc   0x080076dc   0x000000a8   Code   RO        10568    i.lwip_socket       sockets.o
+    0x08007784   0x08007784   0x00000044   Code   RO        10572    i.lwip_sockopt_to_ipopt  sockets.o
+    0x080077c8   0x080077c8   0x0000005e   Code   RO        11598    i.lwip_standard_chksum  inet_chksum.o
+    0x08007826   0x08007826   0x00000016   Code   RO        10574    i.lwip_write        sockets.o
     0x0800783c   0x0800783c   0x0000004c   Code   RO         9078    i.main              main.o
-    0x08007888   0x08007888   0x00000190   Code   RO        11731    i.mem_free          mem.o
-    0x08007a18   0x08007a18   0x00000094   Code   RO        11732    i.mem_init          mem.o
-    0x08007aac   0x08007aac   0x00000058   Code   RO        11733    i.mem_link_valid    mem.o
-    0x08007b04   0x08007b04   0x0000023c   Code   RO        11734    i.mem_malloc        mem.o
-    0x08007d40   0x08007d40   0x00000010   Code   RO        11735    i.mem_to_ptr        mem.o
-    0x08007d50   0x08007d50   0x000001d8   Code   RO        11736    i.mem_trim          mem.o
-    0x08007f28   0x08007f28   0x00000050   Code   RO        11804    i.memp_free         memp.o
-    0x08007f78   0x08007f78   0x00000020   Code   RO        11806    i.memp_init         memp.o
-    0x08007f98   0x08007f98   0x0000002c   Code   RO        11807    i.memp_init_pool    memp.o
-    0x08007fc4   0x08007fc4   0x00000050   Code   RO        11808    i.memp_malloc       memp.o
-    0x08008014   0x08008014   0x00000020   Code   RO        10379    i.netbuf_delete     netbuf.o
-    0x08008034   0x08008034   0x00000048   Code   RO        10381    i.netbuf_free       netbuf.o
-    0x0800807c   0x0800807c   0x0000006c   Code   RO        10384    i.netbuf_ref        netbuf.o
-    0x080080e8   0x080080e8   0x000000fc   Code   RO         9844    i.netconn_accept    api_lib.o
-    0x080081e4   0x080081e4   0x000000c0   Code   RO        10121    i.netconn_alloc     api_msg.o
-    0x080082a4   0x080082a4   0x00000022   Code   RO         9845    i.netconn_apimsg    api_lib.o
+    0x08007888   0x08007888   0x00000190   Code   RO        11758    i.mem_free          mem.o
+    0x08007a18   0x08007a18   0x00000094   Code   RO        11759    i.mem_init          mem.o
+    0x08007aac   0x08007aac   0x00000058   Code   RO        11760    i.mem_link_valid    mem.o
+    0x08007b04   0x08007b04   0x0000023c   Code   RO        11761    i.mem_malloc        mem.o
+    0x08007d40   0x08007d40   0x00000010   Code   RO        11762    i.mem_to_ptr        mem.o
+    0x08007d50   0x08007d50   0x000001d8   Code   RO        11763    i.mem_trim          mem.o
+    0x08007f28   0x08007f28   0x00000050   Code   RO        11831    i.memp_free         memp.o
+    0x08007f78   0x08007f78   0x00000020   Code   RO        11833    i.memp_init         memp.o
+    0x08007f98   0x08007f98   0x0000002c   Code   RO        11834    i.memp_init_pool    memp.o
+    0x08007fc4   0x08007fc4   0x00000050   Code   RO        11835    i.memp_malloc       memp.o
+    0x08008014   0x08008014   0x00000020   Code   RO        10406    i.netbuf_delete     netbuf.o
+    0x08008034   0x08008034   0x00000048   Code   RO        10408    i.netbuf_free       netbuf.o
+    0x0800807c   0x0800807c   0x0000006c   Code   RO        10411    i.netbuf_ref        netbuf.o
+    0x080080e8   0x080080e8   0x000000fc   Code   RO         9871    i.netconn_accept    api_lib.o
+    0x080081e4   0x080081e4   0x000000c0   Code   RO        10148    i.netconn_alloc     api_msg.o
+    0x080082a4   0x080082a4   0x00000022   Code   RO         9872    i.netconn_apimsg    api_lib.o
     0x080082c6   0x080082c6   0x00000002   PAD
-    0x080082c8   0x080082c8   0x00000060   Code   RO         9846    i.netconn_bind      api_lib.o
-    0x08008328   0x08008328   0x0000005c   Code   RO         9849    i.netconn_close_shutdown  api_lib.o
-    0x08008384   0x08008384   0x0000001e   Code   RO         9851    i.netconn_delete    api_lib.o
-    0x080083a2   0x080083a2   0x000000aa   Code   RO        10122    i.netconn_drain     api_msg.o
-    0x0800844c   0x0800844c   0x00000022   Code   RO         9853    i.netconn_err       api_lib.o
+    0x080082c8   0x080082c8   0x00000060   Code   RO         9873    i.netconn_bind      api_lib.o
+    0x08008328   0x08008328   0x0000005c   Code   RO         9876    i.netconn_close_shutdown  api_lib.o
+    0x08008384   0x08008384   0x0000001e   Code   RO         9878    i.netconn_delete    api_lib.o
+    0x080083a2   0x080083a2   0x000000aa   Code   RO        10149    i.netconn_drain     api_msg.o
+    0x0800844c   0x0800844c   0x00000022   Code   RO         9880    i.netconn_err       api_lib.o
     0x0800846e   0x0800846e   0x00000002   PAD
-    0x08008470   0x08008470   0x00000108   Code   RO        10123    i.netconn_free      api_msg.o
-    0x08008578   0x08008578   0x000000d0   Code   RO         9854    i.netconn_getaddr   api_lib.o
-    0x08008648   0x08008648   0x00000054   Code   RO         9855    i.netconn_listen_with_backlog  api_lib.o
-    0x0800869c   0x0800869c   0x00000130   Code   RO         9856    i.netconn_new_with_proto_and_callback  api_lib.o
-    0x080087cc   0x080087cc   0x00000030   Code   RO         9857    i.netconn_prepare_delete  api_lib.o
-    0x080087fc   0x080087fc   0x00000160   Code   RO         9859    i.netconn_recv_data  api_lib.o
-    0x0800895c   0x0800895c   0x000000bc   Code   RO         9860    i.netconn_recv_data_tcp  api_lib.o
-    0x08008a18   0x08008a18   0x00000058   Code   RO         9862    i.netconn_recv_tcp_pbuf_flags  api_lib.o
-    0x08008a70   0x08008a70   0x00000060   Code   RO         9864    i.netconn_recv_udp_raw_netbuf_flags  api_lib.o
-    0x08008ad0   0x08008ad0   0x00000054   Code   RO         9865    i.netconn_send      api_lib.o
-    0x08008b24   0x08008b24   0x00000060   Code   RO         9868    i.netconn_tcp_recvd  api_lib.o
-    0x08008b84   0x08008b84   0x00000060   Code   RO         9869    i.netconn_tcp_recvd_msg  api_lib.o
-    0x08008be4   0x08008be4   0x00000028   Code   RO         9870    i.netconn_write_partly  api_lib.o
-    0x08008c0c   0x08008c0c   0x00000168   Code   RO         9871    i.netconn_write_vectors_partly  api_lib.o
-    0x08008d74   0x08008d74   0x000001b0   Code   RO        11904    i.netif_add         netif.o
-    0x08008f24   0x08008f24   0x00000018   Code   RO        11906    i.netif_do_ip_addr_changed  netif.o
-    0x08008f3c   0x08008f3c   0x00000026   Code   RO        11907    i.netif_do_set_gw   netif.o
+    0x08008470   0x08008470   0x00000108   Code   RO        10150    i.netconn_free      api_msg.o
+    0x08008578   0x08008578   0x000000d0   Code   RO         9881    i.netconn_getaddr   api_lib.o
+    0x08008648   0x08008648   0x00000054   Code   RO         9882    i.netconn_listen_with_backlog  api_lib.o
+    0x0800869c   0x0800869c   0x00000130   Code   RO         9883    i.netconn_new_with_proto_and_callback  api_lib.o
+    0x080087cc   0x080087cc   0x00000030   Code   RO         9884    i.netconn_prepare_delete  api_lib.o
+    0x080087fc   0x080087fc   0x00000160   Code   RO         9886    i.netconn_recv_data  api_lib.o
+    0x0800895c   0x0800895c   0x000000bc   Code   RO         9887    i.netconn_recv_data_tcp  api_lib.o
+    0x08008a18   0x08008a18   0x00000058   Code   RO         9889    i.netconn_recv_tcp_pbuf_flags  api_lib.o
+    0x08008a70   0x08008a70   0x00000060   Code   RO         9891    i.netconn_recv_udp_raw_netbuf_flags  api_lib.o
+    0x08008ad0   0x08008ad0   0x00000054   Code   RO         9892    i.netconn_send      api_lib.o
+    0x08008b24   0x08008b24   0x00000060   Code   RO         9895    i.netconn_tcp_recvd  api_lib.o
+    0x08008b84   0x08008b84   0x00000060   Code   RO         9896    i.netconn_tcp_recvd_msg  api_lib.o
+    0x08008be4   0x08008be4   0x00000028   Code   RO         9897    i.netconn_write_partly  api_lib.o
+    0x08008c0c   0x08008c0c   0x00000168   Code   RO         9898    i.netconn_write_vectors_partly  api_lib.o
+    0x08008d74   0x08008d74   0x000001b0   Code   RO        11931    i.netif_add         netif.o
+    0x08008f24   0x08008f24   0x00000018   Code   RO        11933    i.netif_do_ip_addr_changed  netif.o
+    0x08008f3c   0x08008f3c   0x00000026   Code   RO        11934    i.netif_do_set_gw   netif.o
     0x08008f62   0x08008f62   0x00000002   PAD
-    0x08008f64   0x08008f64   0x00000074   Code   RO        11908    i.netif_do_set_ipaddr  netif.o
-    0x08008fd8   0x08008fd8   0x00000026   Code   RO        11909    i.netif_do_set_netmask  netif.o
+    0x08008f64   0x08008f64   0x00000074   Code   RO        11935    i.netif_do_set_ipaddr  netif.o
+    0x08008fd8   0x08008fd8   0x00000026   Code   RO        11936    i.netif_do_set_netmask  netif.o
     0x08008ffe   0x08008ffe   0x00000002   PAD
-    0x08009000   0x08009000   0x00000048   Code   RO        11910    i.netif_find        netif.o
-    0x08009048   0x08009048   0x00000028   Code   RO        11911    i.netif_get_by_index  netif.o
-    0x08009070   0x08009070   0x00000002   Code   RO        11913    i.netif_init        netif.o
+    0x08009000   0x08009000   0x00000048   Code   RO        11937    i.netif_find        netif.o
+    0x08009048   0x08009048   0x00000028   Code   RO        11938    i.netif_get_by_index  netif.o
+    0x08009070   0x08009070   0x00000002   Code   RO        11940    i.netif_init        netif.o
     0x08009072   0x08009072   0x00000002   PAD
-    0x08009074   0x08009074   0x00000070   Code   RO        11915    i.netif_issue_reports  netif.o
-    0x080090e4   0x080090e4   0x00000008   Code   RO        11917    i.netif_null_output_ip4  netif.o
-    0x080090ec   0x080090ec   0x00000060   Code   RO        11919    i.netif_set_addr    netif.o
-    0x0800914c   0x0800914c   0x0000000c   Code   RO        11920    i.netif_set_default  netif.o
-    0x08009158   0x08009158   0x00000064   Code   RO        11921    i.netif_set_down    netif.o
-    0x080091bc   0x080091bc   0x00000058   Code   RO        11927    i.netif_set_up      netif.o
-    0x08009214   0x08009214   0x00000012   Code   RO        12080    i.pbuf_add_header   pbuf.o
+    0x08009074   0x08009074   0x00000070   Code   RO        11942    i.netif_issue_reports  netif.o
+    0x080090e4   0x080090e4   0x00000008   Code   RO        11944    i.netif_null_output_ip4  netif.o
+    0x080090ec   0x080090ec   0x00000060   Code   RO        11946    i.netif_set_addr    netif.o
+    0x0800914c   0x0800914c   0x0000000c   Code   RO        11947    i.netif_set_default  netif.o
+    0x08009158   0x08009158   0x00000064   Code   RO        11948    i.netif_set_down    netif.o
+    0x080091bc   0x080091bc   0x00000058   Code   RO        11954    i.netif_set_up      netif.o
+    0x08009214   0x08009214   0x00000012   Code   RO        12107    i.pbuf_add_header   pbuf.o
     0x08009226   0x08009226   0x00000002   PAD
-    0x08009228   0x08009228   0x00000088   Code   RO        12082    i.pbuf_add_header_impl  pbuf.o
-    0x080092b0   0x080092b0   0x00000224   Code   RO        12083    i.pbuf_alloc        pbuf.o
-    0x080094d4   0x080094d4   0x0000005c   Code   RO        12084    i.pbuf_alloc_reference  pbuf.o
-    0x08009530   0x08009530   0x00000052   Code   RO        12085    i.pbuf_alloced_custom  pbuf.o
+    0x08009228   0x08009228   0x00000088   Code   RO        12109    i.pbuf_add_header_impl  pbuf.o
+    0x080092b0   0x080092b0   0x00000224   Code   RO        12110    i.pbuf_alloc        pbuf.o
+    0x080094d4   0x080094d4   0x0000005c   Code   RO        12111    i.pbuf_alloc_reference  pbuf.o
+    0x08009530   0x08009530   0x00000052   Code   RO        12112    i.pbuf_alloced_custom  pbuf.o
     0x08009582   0x08009582   0x00000002   PAD
-    0x08009584   0x08009584   0x000000dc   Code   RO        12086    i.pbuf_cat          pbuf.o
-    0x08009660   0x08009660   0x00000016   Code   RO        12087    i.pbuf_chain        pbuf.o
-    0x08009676   0x08009676   0x00000012   Code   RO        12088    i.pbuf_clen         pbuf.o
-    0x08009688   0x08009688   0x00000050   Code   RO        12089    i.pbuf_clone        pbuf.o
-    0x080096d8   0x080096d8   0x0000019c   Code   RO        12091    i.pbuf_copy         pbuf.o
-    0x08009874   0x08009874   0x000000d8   Code   RO        12092    i.pbuf_copy_partial  pbuf.o
-    0x0800994c   0x0800994c   0x00000128   Code   RO        12094    i.pbuf_free         pbuf.o
-    0x08009a74   0x08009a74   0x00000040   Code   RO        12095    i.pbuf_free_header  pbuf.o
-    0x08009ab4   0x08009ab4   0x00000012   Code   RO        12099    i.pbuf_header_force  pbuf.o
-    0x08009ac6   0x08009ac6   0x00000022   Code   RO        12100    i.pbuf_header_impl  pbuf.o
-    0x08009ae8   0x08009ae8   0x0000001e   Code   RO        12101    i.pbuf_init_alloced_pbuf  pbuf.o
+    0x08009584   0x08009584   0x000000dc   Code   RO        12113    i.pbuf_cat          pbuf.o
+    0x08009660   0x08009660   0x00000016   Code   RO        12114    i.pbuf_chain        pbuf.o
+    0x08009676   0x08009676   0x00000012   Code   RO        12115    i.pbuf_clen         pbuf.o
+    0x08009688   0x08009688   0x00000050   Code   RO        12116    i.pbuf_clone        pbuf.o
+    0x080096d8   0x080096d8   0x0000019c   Code   RO        12118    i.pbuf_copy         pbuf.o
+    0x08009874   0x08009874   0x000000d8   Code   RO        12119    i.pbuf_copy_partial  pbuf.o
+    0x0800994c   0x0800994c   0x00000128   Code   RO        12121    i.pbuf_free         pbuf.o
+    0x08009a74   0x08009a74   0x00000040   Code   RO        12122    i.pbuf_free_header  pbuf.o
+    0x08009ab4   0x08009ab4   0x00000012   Code   RO        12126    i.pbuf_header_force  pbuf.o
+    0x08009ac6   0x08009ac6   0x00000022   Code   RO        12127    i.pbuf_header_impl  pbuf.o
+    0x08009ae8   0x08009ae8   0x0000001e   Code   RO        12128    i.pbuf_init_alloced_pbuf  pbuf.o
     0x08009b06   0x08009b06   0x00000002   PAD
-    0x08009b08   0x08009b08   0x000000f0   Code   RO        12105    i.pbuf_realloc      pbuf.o
-    0x08009bf8   0x08009bf8   0x00000048   Code   RO        12106    i.pbuf_ref          pbuf.o
-    0x08009c40   0x08009c40   0x0000008c   Code   RO        12107    i.pbuf_remove_header  pbuf.o
-    0x08009ccc   0x08009ccc   0x000000a8   Code   RO        10124    i.pcb_new           api_msg.o
-    0x08009d74   0x08009d74   0x00000160   Code   RO        11737    i.plug_holes        mem.o
-    0x08009ed4   0x08009ed4   0x000000a0   Code   RO        10125    i.poll_tcp          api_msg.o
-    0x08009f74   0x08009f74   0x00000098   Code   RO        13796    i.prvAddCurrentTaskToDelayedList  tasks.o
-    0x0800a00c   0x0800a00c   0x000000b4   Code   RO        13797    i.prvAddNewTaskToReadyList  tasks.o
-    0x0800a0c0   0x0800a0c0   0x00000064   Code   RO        13798    i.prvCheckTasksWaitingTermination  tasks.o
-    0x0800a124   0x0800a124   0x0000002a   Code   RO        13610    i.prvCopyDataFromQueue  queue.o
-    0x0800a14e   0x0800a14e   0x0000007c   Code   RO        13611    i.prvCopyDataToQueue  queue.o
-    0x0800a1ca   0x0800a1ca   0x00000012   Code   RO        13799    i.prvDeleteTCB      tasks.o
-    0x0800a1dc   0x0800a1dc   0x0000007c   Code   RO        14134    i.prvHeapInit       heap_4.o
-    0x0800a258   0x0800a258   0x00000028   Code   RO        13800    i.prvIdleTask       tasks.o
-    0x0800a280   0x0800a280   0x0000001c   Code   RO        13612    i.prvInitialiseMutex  queue.o
-    0x0800a29c   0x0800a29c   0x00000026   Code   RO        13613    i.prvInitialiseNewQueue  queue.o
+    0x08009b08   0x08009b08   0x000000f0   Code   RO        12132    i.pbuf_realloc      pbuf.o
+    0x08009bf8   0x08009bf8   0x00000048   Code   RO        12133    i.pbuf_ref          pbuf.o
+    0x08009c40   0x08009c40   0x0000008c   Code   RO        12134    i.pbuf_remove_header  pbuf.o
+    0x08009ccc   0x08009ccc   0x000000a8   Code   RO        10151    i.pcb_new           api_msg.o
+    0x08009d74   0x08009d74   0x00000160   Code   RO        11764    i.plug_holes        mem.o
+    0x08009ed4   0x08009ed4   0x000000a0   Code   RO        10152    i.poll_tcp          api_msg.o
+    0x08009f74   0x08009f74   0x00000098   Code   RO        13823    i.prvAddCurrentTaskToDelayedList  tasks.o
+    0x0800a00c   0x0800a00c   0x000000b4   Code   RO        13824    i.prvAddNewTaskToReadyList  tasks.o
+    0x0800a0c0   0x0800a0c0   0x00000064   Code   RO        13825    i.prvCheckTasksWaitingTermination  tasks.o
+    0x0800a124   0x0800a124   0x0000002a   Code   RO        13637    i.prvCopyDataFromQueue  queue.o
+    0x0800a14e   0x0800a14e   0x0000007c   Code   RO        13638    i.prvCopyDataToQueue  queue.o
+    0x0800a1ca   0x0800a1ca   0x00000012   Code   RO        13826    i.prvDeleteTCB      tasks.o
+    0x0800a1dc   0x0800a1dc   0x0000007c   Code   RO        14161    i.prvHeapInit       heap_4.o
+    0x0800a258   0x0800a258   0x00000028   Code   RO        13827    i.prvIdleTask       tasks.o
+    0x0800a280   0x0800a280   0x0000001c   Code   RO        13639    i.prvInitialiseMutex  queue.o
+    0x0800a29c   0x0800a29c   0x00000026   Code   RO        13640    i.prvInitialiseNewQueue  queue.o
     0x0800a2c2   0x0800a2c2   0x00000002   PAD
-    0x0800a2c4   0x0800a2c4   0x000000c8   Code   RO        13801    i.prvInitialiseNewTask  tasks.o
-    0x0800a38c   0x0800a38c   0x00000068   Code   RO        13802    i.prvInitialiseTaskLists  tasks.o
-    0x0800a3f4   0x0800a3f4   0x00000068   Code   RO        14135    i.prvInsertBlockIntoFreeList  heap_4.o
-    0x0800a45c   0x0800a45c   0x0000001a   Code   RO        13614    i.prvIsQueueEmpty   queue.o
-    0x0800a476   0x0800a476   0x0000001e   Code   RO        13615    i.prvIsQueueFull    queue.o
-    0x0800a494   0x0800a494   0x00000034   Code   RO        13803    i.prvResetNextTaskUnblockTime  tasks.o
-    0x0800a4c8   0x0800a4c8   0x00000070   Code   RO        14196    i.prvTaskExitError  port.o
-    0x0800a538   0x0800a538   0x0000007e   Code   RO        13616    i.prvUnlockQueue    queue.o
+    0x0800a2c4   0x0800a2c4   0x000000c8   Code   RO        13828    i.prvInitialiseNewTask  tasks.o
+    0x0800a38c   0x0800a38c   0x00000068   Code   RO        13829    i.prvInitialiseTaskLists  tasks.o
+    0x0800a3f4   0x0800a3f4   0x00000068   Code   RO        14162    i.prvInsertBlockIntoFreeList  heap_4.o
+    0x0800a45c   0x0800a45c   0x0000001a   Code   RO        13641    i.prvIsQueueEmpty   queue.o
+    0x0800a476   0x0800a476   0x0000001e   Code   RO        13642    i.prvIsQueueFull    queue.o
+    0x0800a494   0x0800a494   0x00000034   Code   RO        13830    i.prvResetNextTaskUnblockTime  tasks.o
+    0x0800a4c8   0x0800a4c8   0x00000070   Code   RO        14223    i.prvTaskExitError  port.o
+    0x0800a538   0x0800a538   0x0000007e   Code   RO        13643    i.prvUnlockQueue    queue.o
     0x0800a5b6   0x0800a5b6   0x00000002   PAD
-    0x0800a5b8   0x0800a5b8   0x00000010   Code   RO        11738    i.ptr_to_mem        mem.o
-    0x0800a5c8   0x0800a5c8   0x00000150   Code   RO        14136    i.pvPortMalloc      heap_4.o
-    0x0800a718   0x0800a718   0x00000020   Code   RO        13805    i.pvTaskIncrementMutexHeldCount  tasks.o
-    0x0800a738   0x0800a738   0x0000002c   Code   RO        14197    i.pxPortInitialiseStack  port.o
-    0x0800a764   0x0800a764   0x00000134   Code   RO        10126    i.recv_tcp          api_msg.o
-    0x0800a898   0x0800a898   0x00000120   Code   RO        10127    i.recv_udp          api_msg.o
-    0x0800a9b8   0x0800a9b8   0x00000108   Code   RO        10549    i.select_check_waiters  sockets.o
-    0x0800aac0   0x0800aac0   0x00000088   Code   RO        10128    i.sent_tcp          api_msg.o
-    0x0800ab48   0x0800ab48   0x00000044   Code   RO        10129    i.setup_tcp         api_msg.o
-    0x0800ab8c   0x0800ab8c   0x0000004a   Code   RO        13235    i.sys_arch_mbox_fetch  sys_arch.o
-    0x0800abd6   0x0800abd6   0x00000024   Code   RO        13236    i.sys_arch_mbox_tryfetch  sys_arch.o
-    0x0800abfa   0x0800abfa   0x0000000a   Code   RO        13237    i.sys_arch_protect  sys_arch.o
-    0x0800ac04   0x0800ac04   0x00000048   Code   RO        13238    i.sys_arch_sem_wait  sys_arch.o
-    0x0800ac4c   0x0800ac4c   0x0000000a   Code   RO        13240    i.sys_arch_unprotect  sys_arch.o
+    0x0800a5b8   0x0800a5b8   0x00000010   Code   RO        11765    i.ptr_to_mem        mem.o
+    0x0800a5c8   0x0800a5c8   0x00000150   Code   RO        14163    i.pvPortMalloc      heap_4.o
+    0x0800a718   0x0800a718   0x00000020   Code   RO        13832    i.pvTaskIncrementMutexHeldCount  tasks.o
+    0x0800a738   0x0800a738   0x0000002c   Code   RO        14224    i.pxPortInitialiseStack  port.o
+    0x0800a764   0x0800a764   0x00000134   Code   RO        10153    i.recv_tcp          api_msg.o
+    0x0800a898   0x0800a898   0x00000120   Code   RO        10154    i.recv_udp          api_msg.o
+    0x0800a9b8   0x0800a9b8   0x00000108   Code   RO        10576    i.select_check_waiters  sockets.o
+    0x0800aac0   0x0800aac0   0x00000088   Code   RO        10155    i.sent_tcp          api_msg.o
+    0x0800ab48   0x0800ab48   0x00000044   Code   RO        10156    i.setup_tcp         api_msg.o
+    0x0800ab8c   0x0800ab8c   0x0000004a   Code   RO        13262    i.sys_arch_mbox_fetch  sys_arch.o
+    0x0800abd6   0x0800abd6   0x00000024   Code   RO        13263    i.sys_arch_mbox_tryfetch  sys_arch.o
+    0x0800abfa   0x0800abfa   0x0000000a   Code   RO        13264    i.sys_arch_protect  sys_arch.o
+    0x0800ac04   0x0800ac04   0x00000048   Code   RO        13265    i.sys_arch_sem_wait  sys_arch.o
+    0x0800ac4c   0x0800ac4c   0x0000000a   Code   RO        13267    i.sys_arch_unprotect  sys_arch.o
     0x0800ac56   0x0800ac56   0x00000002   PAD
-    0x0800ac58   0x0800ac58   0x00000054   Code   RO        12921    i.sys_check_timeouts  timeouts.o
-    0x0800acac   0x0800acac   0x0000002c   Code   RO        13241    i.sys_init          sys_arch.o
-    0x0800acd8   0x0800acd8   0x00000012   Code   RO        13243    i.sys_mbox_free     sys_arch.o
-    0x0800acea   0x0800acea   0x00000020   Code   RO        13244    i.sys_mbox_new      sys_arch.o
-    0x0800ad0a   0x0800ad0a   0x00000006   Code   RO        13246    i.sys_mbox_set_invalid  sys_arch.o
-    0x0800ad10   0x0800ad10   0x0000001e   Code   RO        13247    i.sys_mbox_trypost  sys_arch.o
-    0x0800ad2e   0x0800ad2e   0x0000000e   Code   RO        13249    i.sys_mbox_valid    sys_arch.o
-    0x0800ad3c   0x0800ad3c   0x00000012   Code   RO        13251    i.sys_mutex_lock    sys_arch.o
+    0x0800ac58   0x0800ac58   0x00000054   Code   RO        12948    i.sys_check_timeouts  timeouts.o
+    0x0800acac   0x0800acac   0x0000002c   Code   RO        13268    i.sys_init          sys_arch.o
+    0x0800acd8   0x0800acd8   0x00000012   Code   RO        13270    i.sys_mbox_free     sys_arch.o
+    0x0800acea   0x0800acea   0x00000020   Code   RO        13271    i.sys_mbox_new      sys_arch.o
+    0x0800ad0a   0x0800ad0a   0x00000006   Code   RO        13273    i.sys_mbox_set_invalid  sys_arch.o
+    0x0800ad10   0x0800ad10   0x0000001e   Code   RO        13274    i.sys_mbox_trypost  sys_arch.o
+    0x0800ad2e   0x0800ad2e   0x0000000e   Code   RO        13276    i.sys_mbox_valid    sys_arch.o
+    0x0800ad3c   0x0800ad3c   0x00000012   Code   RO        13278    i.sys_mutex_lock    sys_arch.o
     0x0800ad4e   0x0800ad4e   0x00000002   PAD
-    0x0800ad50   0x0800ad50   0x0000003c   Code   RO        13252    i.sys_mutex_new     sys_arch.o
-    0x0800ad8c   0x0800ad8c   0x00000012   Code   RO        13254    i.sys_mutex_unlock  sys_arch.o
+    0x0800ad50   0x0800ad50   0x0000003c   Code   RO        13279    i.sys_mutex_new     sys_arch.o
+    0x0800ad8c   0x0800ad8c   0x00000012   Code   RO        13281    i.sys_mutex_unlock  sys_arch.o
     0x0800ad9e   0x0800ad9e   0x00000002   PAD
-    0x0800ada0   0x0800ada0   0x00000014   Code   RO        13255    i.sys_now           sys_arch.o
-    0x0800adb4   0x0800adb4   0x00000010   Code   RO        13256    i.sys_sem_free      sys_arch.o
-    0x0800adc4   0x0800adc4   0x0000005c   Code   RO        13257    i.sys_sem_new       sys_arch.o
-    0x0800ae20   0x0800ae20   0x00000006   Code   RO        13258    i.sys_sem_set_invalid  sys_arch.o
+    0x0800ada0   0x0800ada0   0x00000014   Code   RO        13282    i.sys_now           sys_arch.o
+    0x0800adb4   0x0800adb4   0x00000010   Code   RO        13283    i.sys_sem_free      sys_arch.o
+    0x0800adc4   0x0800adc4   0x0000005c   Code   RO        13284    i.sys_sem_new       sys_arch.o
+    0x0800ae20   0x0800ae20   0x00000006   Code   RO        13285    i.sys_sem_set_invalid  sys_arch.o
     0x0800ae26   0x0800ae26   0x00000002   PAD
-    0x0800ae28   0x0800ae28   0x0000003c   Code   RO        13259    i.sys_sem_signal    sys_arch.o
-    0x0800ae64   0x0800ae64   0x0000000e   Code   RO        13260    i.sys_sem_valid     sys_arch.o
+    0x0800ae28   0x0800ae28   0x0000003c   Code   RO        13286    i.sys_sem_signal    sys_arch.o
+    0x0800ae64   0x0800ae64   0x0000000e   Code   RO        13287    i.sys_sem_valid     sys_arch.o
     0x0800ae72   0x0800ae72   0x00000002   PAD
-    0x0800ae74   0x0800ae74   0x0000006c   Code   RO        13261    i.sys_thread_new    sys_arch.o
-    0x0800aee0   0x0800aee0   0x0000006c   Code   RO        12923    i.sys_timeout       timeouts.o
-    0x0800af4c   0x0800af4c   0x000000dc   Code   RO        12924    i.sys_timeout_abs   timeouts.o
-    0x0800b028   0x0800b028   0x00000028   Code   RO        12925    i.sys_timeouts_init  timeouts.o
-    0x0800b050   0x0800b050   0x00000068   Code   RO        12926    i.sys_timeouts_sleeptime  timeouts.o
-    0x0800b0b8   0x0800b0b8   0x00000160   Code   RO        12358    i.tcp_abandon       tcp.o
-    0x0800b218   0x0800b218   0x0000000e   Code   RO        12359    i.tcp_abort         tcp.o
-    0x0800b226   0x0800b226   0x00000010   Code   RO        12360    i.tcp_accept        tcp.o
+    0x0800ae74   0x0800ae74   0x0000006c   Code   RO        13288    i.sys_thread_new    sys_arch.o
+    0x0800aee0   0x0800aee0   0x0000006c   Code   RO        12950    i.sys_timeout       timeouts.o
+    0x0800af4c   0x0800af4c   0x000000dc   Code   RO        12951    i.sys_timeout_abs   timeouts.o
+    0x0800b028   0x0800b028   0x00000028   Code   RO        12952    i.sys_timeouts_init  timeouts.o
+    0x0800b050   0x0800b050   0x00000068   Code   RO        12953    i.sys_timeouts_sleeptime  timeouts.o
+    0x0800b0b8   0x0800b0b8   0x00000160   Code   RO        12385    i.tcp_abandon       tcp.o
+    0x0800b218   0x0800b218   0x0000000e   Code   RO        12386    i.tcp_abort         tcp.o
+    0x0800b226   0x0800b226   0x00000010   Code   RO        12387    i.tcp_accept        tcp.o
     0x0800b236   0x0800b236   0x00000002   PAD
-    0x0800b238   0x0800b238   0x00000044   Code   RO        12361    i.tcp_accept_null   tcp.o
-    0x0800b27c   0x0800b27c   0x000000c0   Code   RO        12362    i.tcp_alloc         tcp.o
-    0x0800b33c   0x0800b33c   0x00000006   Code   RO        12363    i.tcp_arg           tcp.o
+    0x0800b238   0x0800b238   0x00000044   Code   RO        12388    i.tcp_accept_null   tcp.o
+    0x0800b27c   0x0800b27c   0x000000c0   Code   RO        12389    i.tcp_alloc         tcp.o
+    0x0800b33c   0x0800b33c   0x00000006   Code   RO        12390    i.tcp_arg           tcp.o
     0x0800b342   0x0800b342   0x00000002   PAD
-    0x0800b344   0x0800b344   0x00000104   Code   RO        12364    i.tcp_bind          tcp.o
-    0x0800b448   0x0800b448   0x00000012   Code   RO        12365    i.tcp_bind_netif    tcp.o
+    0x0800b344   0x0800b344   0x00000104   Code   RO        12391    i.tcp_bind          tcp.o
+    0x0800b448   0x0800b448   0x00000012   Code   RO        12392    i.tcp_bind_netif    tcp.o
     0x0800b45a   0x0800b45a   0x00000002   PAD
-    0x0800b45c   0x0800b45c   0x00000050   Code   RO        12366    i.tcp_close         tcp.o
-    0x0800b4ac   0x0800b4ac   0x000001a4   Code   RO        12367    i.tcp_close_shutdown  tcp.o
-    0x0800b650   0x0800b650   0x00000088   Code   RO        12368    i.tcp_close_shutdown_fin  tcp.o
-    0x0800b6d8   0x0800b6d8   0x00000164   Code   RO        12760    i.tcp_create_segment  tcp_out.o
-    0x0800b83c   0x0800b83c   0x00000070   Code   RO        12371    i.tcp_eff_send_mss_netif  tcp.o
-    0x0800b8ac   0x0800b8ac   0x00000234   Code   RO        12761    i.tcp_enqueue_flags  tcp_out.o
-    0x0800bae0   0x0800bae0   0x0000004c   Code   RO        12372    i.tcp_err           tcp.o
-    0x0800bb2c   0x0800bb2c   0x0000009c   Code   RO        12373    i.tcp_fasttmr       tcp.o
-    0x0800bbc8   0x0800bbc8   0x00000038   Code   RO        12374    i.tcp_free          tcp.o
-    0x0800bc00   0x0800bc00   0x000000ec   Code   RO        12679    i.tcp_free_acked_segments  tcp_in.o
-    0x0800bcec   0x0800bcec   0x00000040   Code   RO        12375    i.tcp_free_listen   tcp.o
-    0x0800bd2c   0x0800bd2c   0x00000048   Code   RO        12680    i.tcp_get_next_optbyte  tcp_in.o
-    0x0800bd74   0x0800bd74   0x00000034   Code   RO        12376    i.tcp_handle_closepend  tcp.o
-    0x0800bda8   0x0800bda8   0x00000002   Code   RO        12377    i.tcp_init          tcp.o
+    0x0800b45c   0x0800b45c   0x00000050   Code   RO        12393    i.tcp_close         tcp.o
+    0x0800b4ac   0x0800b4ac   0x000001a4   Code   RO        12394    i.tcp_close_shutdown  tcp.o
+    0x0800b650   0x0800b650   0x00000088   Code   RO        12395    i.tcp_close_shutdown_fin  tcp.o
+    0x0800b6d8   0x0800b6d8   0x00000164   Code   RO        12787    i.tcp_create_segment  tcp_out.o
+    0x0800b83c   0x0800b83c   0x00000070   Code   RO        12398    i.tcp_eff_send_mss_netif  tcp.o
+    0x0800b8ac   0x0800b8ac   0x00000234   Code   RO        12788    i.tcp_enqueue_flags  tcp_out.o
+    0x0800bae0   0x0800bae0   0x0000004c   Code   RO        12399    i.tcp_err           tcp.o
+    0x0800bb2c   0x0800bb2c   0x0000009c   Code   RO        12400    i.tcp_fasttmr       tcp.o
+    0x0800bbc8   0x0800bbc8   0x00000038   Code   RO        12401    i.tcp_free          tcp.o
+    0x0800bc00   0x0800bc00   0x000000ec   Code   RO        12706    i.tcp_free_acked_segments  tcp_in.o
+    0x0800bcec   0x0800bcec   0x00000040   Code   RO        12402    i.tcp_free_listen   tcp.o
+    0x0800bd2c   0x0800bd2c   0x00000048   Code   RO        12707    i.tcp_get_next_optbyte  tcp_in.o
+    0x0800bd74   0x0800bd74   0x00000034   Code   RO        12403    i.tcp_handle_closepend  tcp.o
+    0x0800bda8   0x0800bda8   0x00000002   Code   RO        12404    i.tcp_init          tcp.o
     0x0800bdaa   0x0800bdaa   0x00000002   PAD
-    0x0800bdac   0x0800bdac   0x0000077c   Code   RO        12681    i.tcp_input         tcp_in.o
-    0x0800c528   0x0800c528   0x00000084   Code   RO        12682    i.tcp_input_delayed_close  tcp_in.o
-    0x0800c5ac   0x0800c5ac   0x00000074   Code   RO        12762    i.tcp_keepalive     tcp_out.o
-    0x0800c620   0x0800c620   0x00000068   Code   RO        12378    i.tcp_kill_prio     tcp.o
-    0x0800c688   0x0800c688   0x00000070   Code   RO        12379    i.tcp_kill_state    tcp.o
-    0x0800c6f8   0x0800c6f8   0x0000003c   Code   RO        12380    i.tcp_kill_timewait  tcp.o
-    0x0800c734   0x0800c734   0x0000006c   Code   RO        12381    i.tcp_listen_closed  tcp.o
-    0x0800c7a0   0x0800c7a0   0x0000018c   Code   RO        12683    i.tcp_listen_input  tcp_in.o
-    0x0800c92c   0x0800c92c   0x00000158   Code   RO        12383    i.tcp_listen_with_backlog_and_err  tcp.o
-    0x0800ca84   0x0800ca84   0x0000004c   Code   RO        12384    i.tcp_netif_ip_addr_changed  tcp.o
-    0x0800cad0   0x0800cad0   0x00000070   Code   RO        12385    i.tcp_netif_ip_addr_changed_pcblist  tcp.o
-    0x0800cb40   0x0800cb40   0x00000010   Code   RO        12387    i.tcp_new_ip_type   tcp.o
-    0x0800cb50   0x0800cb50   0x00000068   Code   RO        12388    i.tcp_new_port      tcp.o
-    0x0800cbb8   0x0800cbb8   0x0000004c   Code   RO        12389    i.tcp_next_iss      tcp.o
-    0x0800cc04   0x0800cc04   0x000002f0   Code   RO        12763    i.tcp_output        tcp_out.o
-    0x0800cef4   0x0800cef4   0x00000074   Code   RO        12764    i.tcp_output_alloc_header  tcp_out.o
-    0x0800cf68   0x0800cf68   0x000000c0   Code   RO        12765    i.tcp_output_alloc_header_common  tcp_out.o
-    0x0800d028   0x0800d028   0x00000094   Code   RO        12766    i.tcp_output_control_segment  tcp_out.o
-    0x0800d0bc   0x0800d0bc   0x000000b8   Code   RO        12767    i.tcp_output_fill_options  tcp_out.o
-    0x0800d174   0x0800d174   0x000001cc   Code   RO        12768    i.tcp_output_segment  tcp_out.o
-    0x0800d340   0x0800d340   0x0000004c   Code   RO        12769    i.tcp_output_segment_busy  tcp_out.o
-    0x0800d38c   0x0800d38c   0x000000cc   Code   RO        12684    i.tcp_parseopt      tcp_in.o
-    0x0800d458   0x0800d458   0x00000104   Code   RO        12770    i.tcp_pbuf_prealloc  tcp_out.o
-    0x0800d55c   0x0800d55c   0x00000070   Code   RO        12390    i.tcp_pcb_purge     tcp.o
-    0x0800d5cc   0x0800d5cc   0x00000128   Code   RO        12391    i.tcp_pcb_remove    tcp.o
-    0x0800d6f4   0x0800d6f4   0x00000070   Code   RO        12392    i.tcp_poll          tcp.o
-    0x0800d764   0x0800d764   0x000006a4   Code   RO        12685    i.tcp_process       tcp_in.o
-    0x0800de08   0x0800de08   0x000000d4   Code   RO        12393    i.tcp_process_refused_data  tcp.o
-    0x0800dedc   0x0800dedc   0x00000728   Code   RO        12686    i.tcp_receive       tcp_in.o
-    0x0800e604   0x0800e604   0x0000004c   Code   RO        12394    i.tcp_recv          tcp.o
-    0x0800e650   0x0800e650   0x00000060   Code   RO        12395    i.tcp_recv_null     tcp.o
-    0x0800e6b0   0x0800e6b0   0x000000b4   Code   RO        12396    i.tcp_recved        tcp.o
-    0x0800e764   0x0800e764   0x00000054   Code   RO        12397    i.tcp_remove_listener  tcp.o
-    0x0800e7b8   0x0800e7b8   0x0000009c   Code   RO        12771    i.tcp_rexmit        tcp_out.o
-    0x0800e854   0x0800e854   0x000000a4   Code   RO        12772    i.tcp_rexmit_fast   tcp_out.o
-    0x0800e8f8   0x0800e8f8   0x00000040   Code   RO        12773    i.tcp_rexmit_rto    tcp_out.o
-    0x0800e938   0x0800e938   0x00000054   Code   RO        12774    i.tcp_rexmit_rto_commit  tcp_out.o
-    0x0800e98c   0x0800e98c   0x000000b0   Code   RO        12775    i.tcp_rexmit_rto_prepare  tcp_out.o
-    0x0800ea3c   0x0800ea3c   0x0000001e   Code   RO        12776    i.tcp_route         tcp_out.o
+    0x0800bdac   0x0800bdac   0x0000077c   Code   RO        12708    i.tcp_input         tcp_in.o
+    0x0800c528   0x0800c528   0x00000084   Code   RO        12709    i.tcp_input_delayed_close  tcp_in.o
+    0x0800c5ac   0x0800c5ac   0x00000074   Code   RO        12789    i.tcp_keepalive     tcp_out.o
+    0x0800c620   0x0800c620   0x00000068   Code   RO        12405    i.tcp_kill_prio     tcp.o
+    0x0800c688   0x0800c688   0x00000070   Code   RO        12406    i.tcp_kill_state    tcp.o
+    0x0800c6f8   0x0800c6f8   0x0000003c   Code   RO        12407    i.tcp_kill_timewait  tcp.o
+    0x0800c734   0x0800c734   0x0000006c   Code   RO        12408    i.tcp_listen_closed  tcp.o
+    0x0800c7a0   0x0800c7a0   0x0000018c   Code   RO        12710    i.tcp_listen_input  tcp_in.o
+    0x0800c92c   0x0800c92c   0x00000158   Code   RO        12410    i.tcp_listen_with_backlog_and_err  tcp.o
+    0x0800ca84   0x0800ca84   0x0000004c   Code   RO        12411    i.tcp_netif_ip_addr_changed  tcp.o
+    0x0800cad0   0x0800cad0   0x00000070   Code   RO        12412    i.tcp_netif_ip_addr_changed_pcblist  tcp.o
+    0x0800cb40   0x0800cb40   0x00000010   Code   RO        12414    i.tcp_new_ip_type   tcp.o
+    0x0800cb50   0x0800cb50   0x00000068   Code   RO        12415    i.tcp_new_port      tcp.o
+    0x0800cbb8   0x0800cbb8   0x0000004c   Code   RO        12416    i.tcp_next_iss      tcp.o
+    0x0800cc04   0x0800cc04   0x000002f0   Code   RO        12790    i.tcp_output        tcp_out.o
+    0x0800cef4   0x0800cef4   0x00000074   Code   RO        12791    i.tcp_output_alloc_header  tcp_out.o
+    0x0800cf68   0x0800cf68   0x000000c0   Code   RO        12792    i.tcp_output_alloc_header_common  tcp_out.o
+    0x0800d028   0x0800d028   0x00000094   Code   RO        12793    i.tcp_output_control_segment  tcp_out.o
+    0x0800d0bc   0x0800d0bc   0x000000b8   Code   RO        12794    i.tcp_output_fill_options  tcp_out.o
+    0x0800d174   0x0800d174   0x000001cc   Code   RO        12795    i.tcp_output_segment  tcp_out.o
+    0x0800d340   0x0800d340   0x0000004c   Code   RO        12796    i.tcp_output_segment_busy  tcp_out.o
+    0x0800d38c   0x0800d38c   0x000000cc   Code   RO        12711    i.tcp_parseopt      tcp_in.o
+    0x0800d458   0x0800d458   0x00000104   Code   RO        12797    i.tcp_pbuf_prealloc  tcp_out.o
+    0x0800d55c   0x0800d55c   0x00000070   Code   RO        12417    i.tcp_pcb_purge     tcp.o
+    0x0800d5cc   0x0800d5cc   0x00000128   Code   RO        12418    i.tcp_pcb_remove    tcp.o
+    0x0800d6f4   0x0800d6f4   0x00000070   Code   RO        12419    i.tcp_poll          tcp.o
+    0x0800d764   0x0800d764   0x000006a4   Code   RO        12712    i.tcp_process       tcp_in.o
+    0x0800de08   0x0800de08   0x000000d4   Code   RO        12420    i.tcp_process_refused_data  tcp.o
+    0x0800dedc   0x0800dedc   0x00000728   Code   RO        12713    i.tcp_receive       tcp_in.o
+    0x0800e604   0x0800e604   0x0000004c   Code   RO        12421    i.tcp_recv          tcp.o
+    0x0800e650   0x0800e650   0x00000060   Code   RO        12422    i.tcp_recv_null     tcp.o
+    0x0800e6b0   0x0800e6b0   0x000000b4   Code   RO        12423    i.tcp_recved        tcp.o
+    0x0800e764   0x0800e764   0x00000054   Code   RO        12424    i.tcp_remove_listener  tcp.o
+    0x0800e7b8   0x0800e7b8   0x0000009c   Code   RO        12798    i.tcp_rexmit        tcp_out.o
+    0x0800e854   0x0800e854   0x000000a4   Code   RO        12799    i.tcp_rexmit_fast   tcp_out.o
+    0x0800e8f8   0x0800e8f8   0x00000040   Code   RO        12800    i.tcp_rexmit_rto    tcp_out.o
+    0x0800e938   0x0800e938   0x00000054   Code   RO        12801    i.tcp_rexmit_rto_commit  tcp_out.o
+    0x0800e98c   0x0800e98c   0x000000b0   Code   RO        12802    i.tcp_rexmit_rto_prepare  tcp_out.o
+    0x0800ea3c   0x0800ea3c   0x0000001e   Code   RO        12803    i.tcp_route         tcp_out.o
     0x0800ea5a   0x0800ea5a   0x00000002   PAD
-    0x0800ea5c   0x0800ea5c   0x000000b8   Code   RO        12777    i.tcp_rst           tcp_out.o
-    0x0800eb14   0x0800eb14   0x0000001a   Code   RO        12398    i.tcp_seg_free      tcp.o
-    0x0800eb2e   0x0800eb2e   0x00000018   Code   RO        12399    i.tcp_segs_free     tcp.o
+    0x0800ea5c   0x0800ea5c   0x000000b8   Code   RO        12804    i.tcp_rst           tcp_out.o
+    0x0800eb14   0x0800eb14   0x0000001a   Code   RO        12425    i.tcp_seg_free      tcp.o
+    0x0800eb2e   0x0800eb2e   0x00000018   Code   RO        12426    i.tcp_segs_free     tcp.o
     0x0800eb46   0x0800eb46   0x00000002   PAD
-    0x0800eb48   0x0800eb48   0x000000d8   Code   RO        12778    i.tcp_send_empty_ack  tcp_out.o
-    0x0800ec20   0x0800ec20   0x0000007c   Code   RO        12779    i.tcp_send_fin      tcp_out.o
-    0x0800ec9c   0x0800ec9c   0x00000048   Code   RO        12400    i.tcp_sent          tcp.o
-    0x0800ece4   0x0800ece4   0x00000098   Code   RO        12402    i.tcp_shutdown      tcp.o
-    0x0800ed7c   0x0800ed7c   0x00000658   Code   RO        12403    i.tcp_slowtmr       tcp.o
-    0x0800f3d4   0x0800f3d4   0x00000248   Code   RO        12780    i.tcp_split_unsent_seg  tcp_out.o
-    0x0800f61c   0x0800f61c   0x00000038   Code   RO        12928    i.tcp_timer_needed  timeouts.o
-    0x0800f654   0x0800f654   0x000000dc   Code   RO        12687    i.tcp_timewait_input  tcp_in.o
-    0x0800f730   0x0800f730   0x00000024   Code   RO        12405    i.tcp_tmr           tcp.o
-    0x0800f754   0x0800f754   0x00000014   Code   RO        12688    i.tcp_trigger_input_pcb_close  tcp_in.o
-    0x0800f768   0x0800f768   0x000000b0   Code   RO        12407    i.tcp_update_rcv_ann_wnd  tcp.o
-    0x0800f818   0x0800f818   0x00000740   Code   RO        12781    i.tcp_write         tcp_out.o
-    0x0800ff58   0x0800ff58   0x00000134   Code   RO        12782    i.tcp_write_checks  tcp_out.o
-    0x0801008c   0x0801008c   0x00000108   Code   RO        12783    i.tcp_zero_window_probe  tcp_out.o
+    0x0800eb48   0x0800eb48   0x000000d8   Code   RO        12805    i.tcp_send_empty_ack  tcp_out.o
+    0x0800ec20   0x0800ec20   0x0000007c   Code   RO        12806    i.tcp_send_fin      tcp_out.o
+    0x0800ec9c   0x0800ec9c   0x00000048   Code   RO        12427    i.tcp_sent          tcp.o
+    0x0800ece4   0x0800ece4   0x00000098   Code   RO        12429    i.tcp_shutdown      tcp.o
+    0x0800ed7c   0x0800ed7c   0x00000658   Code   RO        12430    i.tcp_slowtmr       tcp.o
+    0x0800f3d4   0x0800f3d4   0x00000248   Code   RO        12807    i.tcp_split_unsent_seg  tcp_out.o
+    0x0800f61c   0x0800f61c   0x00000038   Code   RO        12955    i.tcp_timer_needed  timeouts.o
+    0x0800f654   0x0800f654   0x000000dc   Code   RO        12714    i.tcp_timewait_input  tcp_in.o
+    0x0800f730   0x0800f730   0x00000024   Code   RO        12432    i.tcp_tmr           tcp.o
+    0x0800f754   0x0800f754   0x00000014   Code   RO        12715    i.tcp_trigger_input_pcb_close  tcp_in.o
+    0x0800f768   0x0800f768   0x000000b0   Code   RO        12434    i.tcp_update_rcv_ann_wnd  tcp.o
+    0x0800f818   0x0800f818   0x00000740   Code   RO        12808    i.tcp_write         tcp_out.o
+    0x0800ff58   0x0800ff58   0x00000134   Code   RO        12809    i.tcp_write_checks  tcp_out.o
+    0x0801008c   0x0801008c   0x00000108   Code   RO        12810    i.tcp_zero_window_probe  tcp_out.o
     0x08010194   0x08010194   0x00000028   Code   RO         9550    i.tcpecho_init      tcpecho.o
     0x080101bc   0x080101bc   0x00000190   Code   RO         9551    i.tcpecho_thread    tcpecho.o
-    0x0801034c   0x0801034c   0x000000b8   Code   RO        10843    i.tcpip_init        tcpip.o
-    0x08010404   0x08010404   0x0000006c   Code   RO        10844    i.tcpip_inpkt       tcpip.o
-    0x08010470   0x08010470   0x00000030   Code   RO        10845    i.tcpip_input       tcpip.o
-    0x080104a0   0x080104a0   0x00000020   Code   RO        10846    i.tcpip_send_msg_wait_sem  tcpip.o
-    0x080104c0   0x080104c0   0x00000038   Code   RO        12929    i.tcpip_tcp_timer   timeouts.o
-    0x080104f8   0x080104f8   0x00000070   Code   RO        10847    i.tcpip_thread      tcpip.o
-    0x08010568   0x08010568   0x00000078   Code   RO        10848    i.tcpip_thread_handle_msg  tcpip.o
-    0x080105e0   0x080105e0   0x00000060   Code   RO        10849    i.tcpip_timeouts_mbox_fetch  tcpip.o
-    0x08010640   0x08010640   0x0000001a   Code   RO        10550    i.tryget_socket     sockets.o
-    0x0801065a   0x0801065a   0x00000010   Code   RO        10551    i.tryget_socket_unconn  sockets.o
+    0x0801034c   0x0801034c   0x000000b8   Code   RO        10870    i.tcpip_init        tcpip.o
+    0x08010404   0x08010404   0x0000006c   Code   RO        10871    i.tcpip_inpkt       tcpip.o
+    0x08010470   0x08010470   0x00000030   Code   RO        10872    i.tcpip_input       tcpip.o
+    0x080104a0   0x080104a0   0x00000020   Code   RO        10873    i.tcpip_send_msg_wait_sem  tcpip.o
+    0x080104c0   0x080104c0   0x00000038   Code   RO        12956    i.tcpip_tcp_timer   timeouts.o
+    0x080104f8   0x080104f8   0x00000070   Code   RO        10874    i.tcpip_thread      tcpip.o
+    0x08010568   0x08010568   0x00000078   Code   RO        10875    i.tcpip_thread_handle_msg  tcpip.o
+    0x080105e0   0x080105e0   0x00000060   Code   RO        10876    i.tcpip_timeouts_mbox_fetch  tcpip.o
+    0x08010640   0x08010640   0x0000001a   Code   RO        10577    i.tryget_socket     sockets.o
+    0x0801065a   0x0801065a   0x00000010   Code   RO        10578    i.tryget_socket_unconn  sockets.o
     0x0801066a   0x0801066a   0x00000002   PAD
-    0x0801066c   0x0801066c   0x0000001c   Code   RO        10553    i.tryget_socket_unconn_nouse  sockets.o
-    0x08010688   0x08010688   0x000000c4   Code   RO        13005    i.udp_bind          udp.o
-    0x0801074c   0x0801074c   0x00000012   Code   RO        13006    i.udp_bind_netif    udp.o
-    0x0801075e   0x0801075e   0x00000002   Code   RO        13009    i.udp_init          udp.o
-    0x08010760   0x08010760   0x000001dc   Code   RO        13010    i.udp_input         udp.o
-    0x0801093c   0x0801093c   0x000000d0   Code   RO        13011    i.udp_input_local_match  udp.o
-    0x08010a0c   0x08010a0c   0x00000030   Code   RO        13012    i.udp_netif_ip_addr_changed  udp.o
-    0x08010a3c   0x08010a3c   0x0000001c   Code   RO        13013    i.udp_new           udp.o
-    0x08010a58   0x08010a58   0x0000000e   Code   RO        13014    i.udp_new_ip_type   udp.o
+    0x0801066c   0x0801066c   0x0000001c   Code   RO        10580    i.tryget_socket_unconn_nouse  sockets.o
+    0x08010688   0x08010688   0x000000c4   Code   RO        13032    i.udp_bind          udp.o
+    0x0801074c   0x0801074c   0x00000012   Code   RO        13033    i.udp_bind_netif    udp.o
+    0x0801075e   0x0801075e   0x00000002   Code   RO        13036    i.udp_init          udp.o
+    0x08010760   0x08010760   0x000001dc   Code   RO        13037    i.udp_input         udp.o
+    0x0801093c   0x0801093c   0x000000d0   Code   RO        13038    i.udp_input_local_match  udp.o
+    0x08010a0c   0x08010a0c   0x00000030   Code   RO        13039    i.udp_netif_ip_addr_changed  udp.o
+    0x08010a3c   0x08010a3c   0x0000001c   Code   RO        13040    i.udp_new           udp.o
+    0x08010a58   0x08010a58   0x0000000e   Code   RO        13041    i.udp_new_ip_type   udp.o
     0x08010a66   0x08010a66   0x00000002   PAD
-    0x08010a68   0x08010a68   0x00000058   Code   RO        13015    i.udp_new_port      udp.o
-    0x08010ac0   0x08010ac0   0x0000003c   Code   RO        13016    i.udp_recv          udp.o
-    0x08010afc   0x08010afc   0x00000070   Code   RO        13017    i.udp_remove        udp.o
-    0x08010b6c   0x08010b6c   0x00000070   Code   RO        13018    i.udp_send          udp.o
-    0x08010bdc   0x08010bdc   0x000000d0   Code   RO        13019    i.udp_sendto        udp.o
-    0x08010cac   0x08010cac   0x0000011c   Code   RO        13020    i.udp_sendto_if     udp.o
-    0x08010dc8   0x08010dc8   0x00000228   Code   RO        13021    i.udp_sendto_if_src  udp.o
-    0x08010ff0   0x08010ff0   0x00000028   Code   RO        13561    i.uxListRemove      list.o
-    0x08011018   0x08011018   0x00000048   Code   RO        13617    i.uxQueueMessagesWaiting  queue.o
-    0x08011060   0x08011060   0x0000001a   Code   RO        13562    i.vListInitialise   list.o
-    0x0801107a   0x0801107a   0x00000006   Code   RO        13563    i.vListInitialiseItem  list.o
-    0x08011080   0x08011080   0x00000034   Code   RO        13564    i.vListInsert       list.o
-    0x080110b4   0x080110b4   0x00000018   Code   RO        13565    i.vListInsertEnd    list.o
-    0x080110cc   0x080110cc   0x00000084   Code   RO        14199    i.vPortEnterCritical  port.o
-    0x08011150   0x08011150   0x0000006c   Code   RO        14200    i.vPortExitCritical  port.o
-    0x080111bc   0x080111bc   0x000000b4   Code   RO        14137    i.vPortFree         heap_4.o
-    0x08011270   0x08011270   0x00000020   Code   RO        14201    i.vPortSetupTimerInterrupt  port.o
-    0x08011290   0x08011290   0x0000009c   Code   RO        14202    i.vPortValidateInterruptPriority  port.o
-    0x0801132c   0x0801132c   0x0000004c   Code   RO        13621    i.vQueueDelete      queue.o
-    0x08011378   0x08011378   0x00000030   Code   RO        13622    i.vQueueUnregisterQueue  queue.o
-    0x080113a8   0x080113a8   0x00000078   Code   RO        13811    i.vTaskDelay        tasks.o
-    0x08011420   0x08011420   0x00000110   Code   RO        13813    i.vTaskDelete       tasks.o
-    0x08011530   0x08011530   0x0000000c   Code   RO        13815    i.vTaskMissedYield  tasks.o
-    0x0801153c   0x0801153c   0x00000058   Code   RO        13817    i.vTaskPlaceOnEventList  tasks.o
-    0x08011594   0x08011594   0x000000b0   Code   RO        13819    i.vTaskPriorityInherit  tasks.o
-    0x08011644   0x08011644   0x00000050   Code   RO        13822    i.vTaskSetTimeOutState  tasks.o
-    0x08011694   0x08011694   0x000000a8   Code   RO        13823    i.vTaskStartScheduler  tasks.o
-    0x0801173c   0x0801173c   0x00000010   Code   RO        13825    i.vTaskSuspendAll   tasks.o
-    0x0801174c   0x0801174c   0x000000ac   Code   RO        13826    i.vTaskSwitchContext  tasks.o
-    0x080117f8   0x080117f8   0x00000158   Code   RO        14203    i.xPortStartScheduler  port.o
-    0x08011950   0x08011950   0x00000034   Code   RO        14204    i.xPortSysTickHandler  port.o
-    0x08011984   0x08011984   0x00000070   Code   RO        13623    i.xQueueCreateCountingSemaphore  queue.o
-    0x080119f4   0x080119f4   0x00000022   Code   RO        13624    i.xQueueCreateMutex  queue.o
+    0x08010a68   0x08010a68   0x00000058   Code   RO        13042    i.udp_new_port      udp.o
+    0x08010ac0   0x08010ac0   0x0000003c   Code   RO        13043    i.udp_recv          udp.o
+    0x08010afc   0x08010afc   0x00000070   Code   RO        13044    i.udp_remove        udp.o
+    0x08010b6c   0x08010b6c   0x00000070   Code   RO        13045    i.udp_send          udp.o
+    0x08010bdc   0x08010bdc   0x000000d0   Code   RO        13046    i.udp_sendto        udp.o
+    0x08010cac   0x08010cac   0x0000011c   Code   RO        13047    i.udp_sendto_if     udp.o
+    0x08010dc8   0x08010dc8   0x00000228   Code   RO        13048    i.udp_sendto_if_src  udp.o
+    0x08010ff0   0x08010ff0   0x00000028   Code   RO        13588    i.uxListRemove      list.o
+    0x08011018   0x08011018   0x00000048   Code   RO        13644    i.uxQueueMessagesWaiting  queue.o
+    0x08011060   0x08011060   0x0000001a   Code   RO        13589    i.vListInitialise   list.o
+    0x0801107a   0x0801107a   0x00000006   Code   RO        13590    i.vListInitialiseItem  list.o
+    0x08011080   0x08011080   0x00000034   Code   RO        13591    i.vListInsert       list.o
+    0x080110b4   0x080110b4   0x00000018   Code   RO        13592    i.vListInsertEnd    list.o
+    0x080110cc   0x080110cc   0x00000084   Code   RO        14226    i.vPortEnterCritical  port.o
+    0x08011150   0x08011150   0x0000006c   Code   RO        14227    i.vPortExitCritical  port.o
+    0x080111bc   0x080111bc   0x000000b4   Code   RO        14164    i.vPortFree         heap_4.o
+    0x08011270   0x08011270   0x00000020   Code   RO        14228    i.vPortSetupTimerInterrupt  port.o
+    0x08011290   0x08011290   0x0000009c   Code   RO        14229    i.vPortValidateInterruptPriority  port.o
+    0x0801132c   0x0801132c   0x0000004c   Code   RO        13648    i.vQueueDelete      queue.o
+    0x08011378   0x08011378   0x00000030   Code   RO        13649    i.vQueueUnregisterQueue  queue.o
+    0x080113a8   0x080113a8   0x00000078   Code   RO        13838    i.vTaskDelay        tasks.o
+    0x08011420   0x08011420   0x00000110   Code   RO        13840    i.vTaskDelete       tasks.o
+    0x08011530   0x08011530   0x0000000c   Code   RO        13842    i.vTaskMissedYield  tasks.o
+    0x0801153c   0x0801153c   0x00000058   Code   RO        13844    i.vTaskPlaceOnEventList  tasks.o
+    0x08011594   0x08011594   0x000000b0   Code   RO        13846    i.vTaskPriorityInherit  tasks.o
+    0x08011644   0x08011644   0x00000050   Code   RO        13849    i.vTaskSetTimeOutState  tasks.o
+    0x08011694   0x08011694   0x000000a8   Code   RO        13850    i.vTaskStartScheduler  tasks.o
+    0x0801173c   0x0801173c   0x00000010   Code   RO        13852    i.vTaskSuspendAll   tasks.o
+    0x0801174c   0x0801174c   0x000000ac   Code   RO        13853    i.vTaskSwitchContext  tasks.o
+    0x080117f8   0x080117f8   0x00000158   Code   RO        14230    i.xPortStartScheduler  port.o
+    0x08011950   0x08011950   0x00000034   Code   RO        14231    i.xPortSysTickHandler  port.o
+    0x08011984   0x08011984   0x00000070   Code   RO        13650    i.xQueueCreateCountingSemaphore  queue.o
+    0x080119f4   0x080119f4   0x00000022   Code   RO        13651    i.xQueueCreateMutex  queue.o
     0x08011a16   0x08011a16   0x00000002   PAD
-    0x08011a18   0x08011a18   0x00000078   Code   RO        13625    i.xQueueGenericCreate  queue.o
-    0x08011a90   0x08011a90   0x000001cc   Code   RO        13626    i.xQueueGenericReceive  queue.o
-    0x08011c5c   0x08011c5c   0x000000b4   Code   RO        13627    i.xQueueGenericReset  queue.o
-    0x08011d10   0x08011d10   0x000001a8   Code   RO        13628    i.xQueueGenericSend  queue.o
-    0x08011eb8   0x08011eb8   0x000000ec   Code   RO        13630    i.xQueueGiveFromISR  queue.o
-    0x08011fa4   0x08011fa4   0x000000a4   Code   RO        13827    i.xTaskCheckForTimeOut  tasks.o
-    0x08012048   0x08012048   0x00000060   Code   RO        13828    i.xTaskCreate       tasks.o
-    0x080120a8   0x080120a8   0x00000020   Code   RO        13832    i.xTaskGetSchedulerState  tasks.o
-    0x080120c8   0x080120c8   0x0000000c   Code   RO        13833    i.xTaskGetTickCount  tasks.o
-    0x080120d4   0x080120d4   0x00000164   Code   RO        13835    i.xTaskIncrementTick  tasks.o
-    0x08012238   0x08012238   0x000000dc   Code   RO        13838    i.xTaskPriorityDisinherit  tasks.o
-    0x08012314   0x08012314   0x000000b8   Code   RO        13839    i.xTaskRemoveFromEventList  tasks.o
-    0x080123cc   0x080123cc   0x00000124   Code   RO        13841    i.xTaskResumeAll    tasks.o
+    0x08011a18   0x08011a18   0x00000078   Code   RO        13652    i.xQueueGenericCreate  queue.o
+    0x08011a90   0x08011a90   0x000001cc   Code   RO        13653    i.xQueueGenericReceive  queue.o
+    0x08011c5c   0x08011c5c   0x000000b4   Code   RO        13654    i.xQueueGenericReset  queue.o
+    0x08011d10   0x08011d10   0x000001a8   Code   RO        13655    i.xQueueGenericSend  queue.o
+    0x08011eb8   0x08011eb8   0x000000ec   Code   RO        13657    i.xQueueGiveFromISR  queue.o
+    0x08011fa4   0x08011fa4   0x000000a4   Code   RO        13854    i.xTaskCheckForTimeOut  tasks.o
+    0x08012048   0x08012048   0x00000060   Code   RO        13855    i.xTaskCreate       tasks.o
+    0x080120a8   0x080120a8   0x00000020   Code   RO        13859    i.xTaskGetSchedulerState  tasks.o
+    0x080120c8   0x080120c8   0x0000000c   Code   RO        13860    i.xTaskGetTickCount  tasks.o
+    0x080120d4   0x080120d4   0x00000164   Code   RO        13862    i.xTaskIncrementTick  tasks.o
+    0x08012238   0x08012238   0x000000dc   Code   RO        13865    i.xTaskPriorityDisinherit  tasks.o
+    0x08012314   0x08012314   0x000000b8   Code   RO        13866    i.xTaskRemoveFromEventList  tasks.o
+    0x080123cc   0x080123cc   0x00000124   Code   RO        13868    i.xTaskResumeAll    tasks.o
     0x080124f0   0x080124f0   0x00000018   Data   RO           15    .constdata          system_stm32f4xx.o
-    0x08012508   0x08012508   0x00000003   Data   RO        10130    .constdata          api_msg.o
+    0x08012508   0x08012508   0x00000003   Data   RO        10157    .constdata          api_msg.o
     0x0801250b   0x0801250b   0x00000001   PAD
-    0x0801250c   0x0801250c   0x00000044   Data   RO        10305    .constdata          err.o
-    0x08012550   0x08012550   0x00000008   Data   RO        11291    .constdata          ip4_addr.o
-    0x08012558   0x08012558   0x000000d0   Data   RO        11811    .constdata          memp.o
-    0x08012628   0x08012628   0x00000050   Data   RO        12408    .constdata          tcp.o
-    0x08012678   0x08012678   0x0000001c   Data   RO        12930    .constdata          timeouts.o
-    0x08012694   0x08012694   0x0000000c   Data   RO        13137    .constdata          ethernet.o
-    0x080126a0   0x080126a0   0x00000081   Data   RO        14287    .constdata          mc_w.l(ctype_o.o)
+    0x0801250c   0x0801250c   0x00000044   Data   RO        10332    .constdata          err.o
+    0x08012550   0x08012550   0x00000008   Data   RO        11318    .constdata          ip4_addr.o
+    0x08012558   0x08012558   0x000000d0   Data   RO        11838    .constdata          memp.o
+    0x08012628   0x08012628   0x00000050   Data   RO        12435    .constdata          tcp.o
+    0x08012678   0x08012678   0x0000001c   Data   RO        12957    .constdata          timeouts.o
+    0x08012694   0x08012694   0x0000000c   Data   RO        13164    .constdata          ethernet.o
+    0x080126a0   0x080126a0   0x00000081   Data   RO        14314    .constdata          mc_w.l(ctype_o.o)
     0x08012721   0x08012721   0x00000003   PAD
-    0x08012724   0x08012724   0x00000004   Data   RO        14288    .constdata          mc_w.l(ctype_o.o)
-    0x08012728   0x08012728   0x00000041   Data   RO        11039    .conststring        etharp.o
+    0x08012724   0x08012724   0x00000004   Data   RO        14315    .constdata          mc_w.l(ctype_o.o)
+    0x08012728   0x08012728   0x00000041   Data   RO        11066    .conststring        etharp.o
     0x08012769   0x08012769   0x00000003   PAD
-    0x0801276c   0x0801276c   0x00000041   Data   RO        11637    .conststring        init.o
+    0x0801276c   0x0801276c   0x00000041   Data   RO        11664    .conststring        init.o
     0x080127ad   0x080127ad   0x00000003   PAD
-    0x080127b0   0x080127b0   0x00000075   Data   RO        12409    .conststring        tcp.o
+    0x080127b0   0x080127b0   0x00000075   Data   RO        12436    .conststring        tcp.o
     0x08012825   0x08012825   0x00000003   PAD
-    0x08012828   0x08012828   0x00000055   Data   RO        12784    .conststring        tcp_out.o
+    0x08012828   0x08012828   0x00000055   Data   RO        12811    .conststring        tcp_out.o
     0x0801287d   0x0801287d   0x00000003   PAD
-    0x08012880   0x08012880   0x00000020   Data   RO        14676    Region$$Table       anon$$obj.o
+    0x08012880   0x08012880   0x00000020   Data   RO        14703    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080128a0, Size: 0x00025998, Max: 0x00030000, ABSOLUTE, COMPRESSED[0x00000018])
@@ -7690,43 +7698,43 @@ Memory Map of the image
     0x20000004   COMPRESSED   0x00000009   Data   RW          309    .data               stm32f4xx_hal.o
     0x2000000d   COMPRESSED   0x00000003   PAD
     0x20000010   COMPRESSED   0x0000000c   Data   RW         9079    .data               main.o
-    0x2000001c   COMPRESSED   0x00000004   Data   RW        10555    .data               sockets.o
-    0x20000020   COMPRESSED   0x00000010   Data   RW        10851    .data               tcpip.o
-    0x20000030   COMPRESSED   0x00000001   Data   RW        11040    .data               etharp.o
+    0x2000001c   COMPRESSED   0x00000004   Data   RW        10582    .data               sockets.o
+    0x20000020   COMPRESSED   0x00000010   Data   RW        10878    .data               tcpip.o
+    0x20000030   COMPRESSED   0x00000001   Data   RW        11067    .data               etharp.o
     0x20000031   COMPRESSED   0x00000001   PAD
-    0x20000032   COMPRESSED   0x00000002   Data   RW        11214    .data               ip4.o
-    0x20000034   COMPRESSED   0x00000006   Data   RW        11363    .data               ip4_frag.o
+    0x20000032   COMPRESSED   0x00000002   Data   RW        11241    .data               ip4.o
+    0x20000034   COMPRESSED   0x00000006   Data   RW        11390    .data               ip4_frag.o
     0x2000003a   COMPRESSED   0x00000002   PAD
-    0x2000003c   COMPRESSED   0x00000010   Data   RW        11740    .data               mem.o
-    0x2000004c   COMPRESSED   0x00000034   Data   RW        11812    .data               memp.o
-    0x20000080   COMPRESSED   0x00000009   Data   RW        11928    .data               netif.o
+    0x2000003c   COMPRESSED   0x00000010   Data   RW        11767    .data               mem.o
+    0x2000004c   COMPRESSED   0x00000034   Data   RW        11839    .data               memp.o
+    0x20000080   COMPRESSED   0x00000009   Data   RW        11955    .data               netif.o
     0x20000089   COMPRESSED   0x00000003   PAD
-    0x2000008c   COMPRESSED   0x00000020   Data   RW        12410    .data               tcp.o
-    0x200000ac   COMPRESSED   0x00000028   Data   RW        12690    .data               tcp_in.o
-    0x200000d4   COMPRESSED   0x0000000c   Data   RW        12931    .data               timeouts.o
-    0x200000e0   COMPRESSED   0x00000008   Data   RW        13022    .data               udp.o
-    0x200000e8   COMPRESSED   0x00000010   Data   RW        13177    .data               ethernetif.o
-    0x200000f8   COMPRESSED   0x00000024   Data   RW        13263    .data               sys_arch.o
-    0x2000011c   COMPRESSED   0x0000003c   Data   RW        13844    .data               tasks.o
-    0x20000158   COMPRESSED   0x00000018   Data   RW        14142    .data               heap_4.o
-    0x20000170   COMPRESSED   0x0000000c   Data   RW        14205    .data               port.o
-    0x2000017c   COMPRESSED   0x00000004   Data   RW        14637    .data               mc_w.l(stdout.o)
-    0x20000180   COMPRESSED   0x00000004   Data   RW        14644    .data               mc_w.l(mvars.o)
-    0x20000184   COMPRESSED   0x00000004   Data   RW        14649    .data               mc_w.l(errno.o)
+    0x2000008c   COMPRESSED   0x00000020   Data   RW        12437    .data               tcp.o
+    0x200000ac   COMPRESSED   0x00000028   Data   RW        12717    .data               tcp_in.o
+    0x200000d4   COMPRESSED   0x0000000c   Data   RW        12958    .data               timeouts.o
+    0x200000e0   COMPRESSED   0x00000008   Data   RW        13049    .data               udp.o
+    0x200000e8   COMPRESSED   0x00000010   Data   RW        13204    .data               ethernetif.o
+    0x200000f8   COMPRESSED   0x00000024   Data   RW        13290    .data               sys_arch.o
+    0x2000011c   COMPRESSED   0x0000003c   Data   RW        13871    .data               tasks.o
+    0x20000158   COMPRESSED   0x00000018   Data   RW        14169    .data               heap_4.o
+    0x20000170   COMPRESSED   0x0000000c   Data   RW        14232    .data               port.o
+    0x2000017c   COMPRESSED   0x00000004   Data   RW        14664    .data               mc_w.l(stdout.o)
+    0x20000180   COMPRESSED   0x00000004   Data   RW        14671    .data               mc_w.l(mvars.o)
+    0x20000184   COMPRESSED   0x00000004   Data   RW        14676    .data               mc_w.l(errno.o)
     0x20000188        -       0x00000040   Zero   RW         9245    .bss                bsp_debug_usart.o
     0x200001c8        -       0x00006188   Zero   RW         9361    .bss                bsp_eth.o
-    0x20006350        -       0x00000040   Zero   RW        10554    .bss                sockets.o
-    0x20006390        -       0x000000f0   Zero   RW        11038    .bss                etharp.o
-    0x20006480        -       0x00000010   Zero   RW        11290    .bss                ip4_addr.o
-    0x20006490        -       0x00000018   Zero   RW        11706    .bss                ip.o
-    0x200064a8        -       0x00003c13   Zero   RW        11739    .bss                mem.o
-    0x2000a0bb        -       0x00012143   Zero   RW        11810    .bss                memp.o
+    0x20006350        -       0x00000040   Zero   RW        10581    .bss                sockets.o
+    0x20006390        -       0x000000f0   Zero   RW        11065    .bss                etharp.o
+    0x20006480        -       0x00000010   Zero   RW        11317    .bss                ip4_addr.o
+    0x20006490        -       0x00000018   Zero   RW        11733    .bss                ip.o
+    0x200064a8        -       0x00003c13   Zero   RW        11766    .bss                mem.o
+    0x2000a0bb        -       0x00012143   Zero   RW        11837    .bss                memp.o
     0x2001c1fe   COMPRESSED   0x00000002   PAD
-    0x2001c200        -       0x00000010   Zero   RW        12689    .bss                tcp_in.o
-    0x2001c210        -       0x00000050   Zero   RW        13262    .bss                sys_arch.o
-    0x2001c260        -       0x00000050   Zero   RW        13637    .bss                queue.o
-    0x2001c2b0        -       0x000002e4   Zero   RW        13843    .bss                tasks.o
-    0x2001c594        -       0x00009000   Zero   RW        14141    .bss                heap_4.o
+    0x2001c200        -       0x00000010   Zero   RW        12716    .bss                tcp_in.o
+    0x2001c210        -       0x00000050   Zero   RW        13289    .bss                sys_arch.o
+    0x2001c260        -       0x00000050   Zero   RW        13664    .bss                queue.o
+    0x2001c2b0        -       0x000002e4   Zero   RW        13870    .bss                tasks.o
+    0x2001c594        -       0x00009000   Zero   RW        14168    .bss                heap_4.o
     0x20025594   COMPRESSED   0x00000004   PAD
     0x20025598        -       0x00000400   Zero   RW            1    STACK               startup_stm32f429xx.o
 
