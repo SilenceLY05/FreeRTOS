@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F429xx,USE_STM32F429I_DISCO</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS\Include;..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\Libraries\STM32F4xx_HAL_Driver\Inc;..\User;..\User\usart;..\User\led;..\LwIP\include;..\LwIP\include\compat;..\LwIP\include\lwip;..\LwIP\include\netif;..\LwIP\include\lwip\apps;..\LwIP\include\lwip\priv;..\LwIP\include\lwip\prot;..\User\arch;..\User\eth;..\FreeRTOS\include;..\FreeRTOS\port\MemMang;..\FreeRTOS\port\RVDS\ARM_CM4F;..\User\sdram;..\User\cm_backtrace;..\User\flash;..\User\uart;..\User\key;..\User\beep</IncludePath>
+              <IncludePath>..\Libraries\CMSIS\Include;..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\Libraries\STM32F4xx_HAL_Driver\Inc;..\User;..\User\usart;..\User\led;..\LwIP\include;..\LwIP\include\compat;..\LwIP\include\lwip;..\LwIP\include\netif;..\LwIP\include\lwip\apps;..\LwIP\include\lwip\priv;..\LwIP\include\lwip\prot;..\User\arch;..\User\eth;..\FreeRTOS\include;..\FreeRTOS\port\MemMang;..\FreeRTOS\port\RVDS\ARM_CM4F;..\User\sdram;..\User\cm_backtrace;..\User\flash;..\User\uart;..\User\key;..\User\beep;..\User\LAN9303</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -808,6 +808,11 @@
               <FileName>bsp_beep.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\beep\bsp_beep.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_lan9303.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\LAN9303\bsp_lan9303.c</FilePath>
             </File>
           </Files>
         </Group>
