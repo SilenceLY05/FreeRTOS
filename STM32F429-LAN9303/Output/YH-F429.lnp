@@ -82,6 +82,7 @@
 "..\output\bsp_beep.o"
 "..\output\bsp_lan9303.o"
 "..\output\bsp_i2c_ee.o"
+"..\output\otdr.o"
 "..\output\api_lib.o"
 "..\output\api_msg.o"
 "..\output\err.o"
