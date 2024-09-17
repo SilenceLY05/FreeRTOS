@@ -83,6 +83,7 @@
 "..\output\bsp_lan9303.o"
 "..\output\bsp_i2c_ee.o"
 "..\output\otdr.o"
+"..\output\bsp_ad8404.o"
 "..\output\api_lib.o"
 "..\output\api_msg.o"
 "..\output\err.o"
