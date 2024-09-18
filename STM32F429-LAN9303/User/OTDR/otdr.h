@@ -24,6 +24,17 @@
 #define CMD_DSP_UPLOAD_REF_DATA 0x90000001 // 上传刷新测试数据 
 #define CMD_RESPONSE_STATE 0xA0000000 // 返回状态码
 
+/******************************* 帧格式定义 **************************************/ 
+// 版本号 
+#define REV_ID 0 
+#define RSVD_VALUE 0xffffeeee 
+// 帧类型 
+#define FRAMETYPE_HOST2TARGET 0 // 主控命令类型 
+#define FRAMETYPE_TARGET2HOST 1 // 响应命令类型 
+#define FRAME_SYNC_STRING "GLinkOtdr-3800M" 
+// 帧头标志 
+
+
 
 #endif /* __OTDR_H__ */
 
