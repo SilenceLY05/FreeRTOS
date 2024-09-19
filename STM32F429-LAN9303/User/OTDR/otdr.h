@@ -1,6 +1,7 @@
 #ifndef __OTDR_H__
 #define __OTDR_H__
 
+#include "stm32f4xx.h"
 //#include <unistd.h> 
 #include <stdio.h> 
 #include <string.h> 
@@ -33,7 +34,17 @@
 #define FRAMETYPE_TARGET2HOST 1 // 响应命令类型 
 #define FRAME_SYNC_STRING "GLinkOtdr-3800M" 
 // 帧头标志 
-
+typedef struct 
+{ 
+ char FrameSync[16]; // GLinkOtdr-3800M 
+ uint32_t TotalLength; // 总帧长 
+ uint32_t Rev; // 版本号 
+ uint32_t FrameType; // 帧类型 
+ uint32_t Src; // 源地址 
+ uint32_t Dst; // 目的地址 
+ uint32_t PacketID; // 流水号 
+ uint32_t RSVD; // 保留 
+}frame_header_t; 
 
 
 #endif /* __OTDR_H__ */

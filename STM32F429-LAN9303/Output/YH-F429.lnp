@@ -84,6 +84,7 @@
 "..\output\bsp_i2c_ee.o"
 "..\output\otdr.o"
 "..\output\bsp_ad8404.o"
+"..\output\bsp_ad8404_test.o"
 "..\output\api_lib.o"
 "..\output\api_msg.o"
 "..\output\err.o"
