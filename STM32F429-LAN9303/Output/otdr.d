@@ -73,3 +73,5 @@
 ..\output\otdr.o: ..\Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_hcd.h
 ..\output\otdr.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\output\otdr.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+..\output\otdr.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\output\otdr.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
