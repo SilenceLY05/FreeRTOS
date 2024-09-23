@@ -839,6 +839,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\Switch\bsp_switch.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_switch_test.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Switch\bsp_switch_test.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

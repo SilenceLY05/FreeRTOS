@@ -86,6 +86,7 @@
 "..\output\bsp_ad8404.o"
 "..\output\bsp_ad8404_test.o"
 "..\output\bsp_switch.o"
+"..\output\bsp_switch_test.o"
 "..\output\api_lib.o"
 "..\output\api_msg.o"
 "..\output\err.o"
